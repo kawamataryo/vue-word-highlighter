@@ -1,6 +1,6 @@
 {
   "name": "vue-word-highlighter",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "The word highlighter library for Vue.js ",
   "main": "dist/vue-word-highlighter.cjs.js",
   "module": "dist/vue-word-highlighter.esm.js",
@@ -19,7 +19,7 @@
     "format": "prettier '{src,web,tests}/**/*.{js,ts,vue}'",
     "format:fix": "prettier --write '{src,web,tests}/**/*.{js,ts,vue}'",
     "prepare": "husky install",
-    "release": "npx bumpp --tag --commit --push && yarn publish",
+    "release": "yarn build:package && npx bumpp --tag --commit --push && yarn publish",
     "test:2": "vue-demi-switch 2 vue2 && jest ./tests/vue2",
     "test:3": "vue-demi-switch 3 && jest ./tests/vue3"
   },
