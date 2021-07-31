@@ -1,0 +1,55 @@
+import typescript from 'rollup-plugin-typescript2'
+import dts from "rollup-plugin-dts"
+// @ts-ignore
+import pkg from './package.json'
+// @ts-ignore
+import { terser } from 'rollup-plugin-terser'
+import { defineConfig } from "rollup";
+
+export default defineConfig([
+  {
+    plugins: [
+      typescript(),
+      terser()
+    ],
+    external: [
+      'vue-demi',
+    ],
+    input: 'src/index.ts',
+    output: [
+      {
+        format: 'esm',
+        compact: true,
+        file: pkg.module,
+        sourcemap: true,
+      },
+      {
+        exports: 'named',
+        compact: true,
+        format: 'cjs',
+        file: pkg.main
+      },
+      {
+        file: pkg.unpkg,
+        format: 'umd',
+        name: 'VueWordHighlighter',
+        compact: true,
+        sourcemap: true,
+        globals: {
+          'vue-demi': 'VueDemi',
+        },
+      }
+    ]
+  },
+  {
+    input: "src/index.ts",
+    plugins: [
+      dts(),
+    ],
+    output: {
+      file: "dist/index.d.ts",
+      format: "es"
+    }
+  }
+])
+
