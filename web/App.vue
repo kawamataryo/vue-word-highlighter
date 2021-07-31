@@ -28,14 +28,14 @@
             placeholder="Search target text"
           ></textarea>
         </div>
-        <box class="box has-text-left" style="white-space: pre-wrap">
+        <div class="box has-text-left" style="white-space: pre-wrap">
           <WordHighlighter
             :query="query"
             :split-by-space="options.splitBySpace"
             :case-sensitive="options.caseSensitive"
             >{{ paragraph }}</WordHighlighter
           >
-        </box>
+        </div>
       </div>
     </div>
   </div>
