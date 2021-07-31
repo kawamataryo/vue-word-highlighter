@@ -4,6 +4,7 @@
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.min.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -52,6 +53,6 @@
     "vue-tsc": "^0.2.2"
   },
   "lint-staged": {
-    "{src,web}/**/*.{js,ts,vue}": ["format:fix","lint:fix"]
+    "{src,web}/**/*.{js,ts,vue}": ["yarn format:fix","yarn lint:fix"]
   }
 }
