@@ -1,4 +1,4 @@
-import { defineComponent, h, computed } from "vue-demi";
+import { defineComponent, h, computed, isVue3 } from "vue-demi";
 
 export default defineComponent({
   name: "VueWordHighlighter",
@@ -27,13 +27,20 @@ export default defineComponent({
   setup(props, ctx) {
     const defaultSlotText = computed(() => {
       if (ctx.slots && ctx.slots.default) {
+        let slotText;
         const defaultSlot = ctx.slots.default();
-        const slotText = defaultSlot[0].children;
-        console.log(defaultSlot[0]);
+        if (isVue3) {
+          slotText = defaultSlot[0].children;
+        } else {
+          // vue 2 slots text is in vnode's text attribute
+          slotText = (defaultSlot[0] as any).text;
+        }
         if (typeof slotText === "string") {
           return slotText;
         } else {
-          console.warn("Slots should be text only");
+          if (process.env.NODE_ENV !== "production") {
+            console.warn("Slots should be text only");
+          }
           return "";
         }
       }
