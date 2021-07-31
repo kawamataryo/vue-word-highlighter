@@ -43,6 +43,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-vue": "^7.15.0",
     "husky": "^7.0.0",
+    "vue2": "npm:vue@2",
     "lint-staged": ">=10",
     "prettier": "2.3.2",
     "rollup": "^2.55.1",

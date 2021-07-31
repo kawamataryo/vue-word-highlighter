@@ -1,4 +1,8 @@
-import { defineComponent, h, computed, isVue3 } from "vue-demi";
+import { defineComponent, h, computed, install } from "vue-demi";
+import { createHighlightPattern } from "../utils/createHighlightPattern";
+import { getDefaultSlotsText } from "../utils/getDefaultSlotsText";
+
+install();
 
 export default defineComponent({
   name: "VueWordHighlighter",
@@ -25,49 +29,23 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
-    const defaultSlotText = computed(() => {
-      if (ctx.slots && ctx.slots.default) {
-        let slotText;
-        const defaultSlot = ctx.slots.default();
-        if (isVue3) {
-          slotText = defaultSlot[0].children;
-        } else {
-          // vue 2 slots text is in vnode's text attribute
-          slotText = (defaultSlot[0] as any).text;
-        }
-        if (typeof slotText === "string") {
-          return slotText;
-        } else {
-          if (process.env.NODE_ENV !== "production") {
-            console.warn("Slots should be text only");
-          }
-          return "";
-        }
-      }
-      return "";
+    const defaultSlotsText = computed(() => {
+      return getDefaultSlotsText(ctx.slots);
     });
 
     const highlightWordChunk = computed(() => {
       if (!props.query || !props.query.trim()) {
-        return defaultSlotText.value;
+        return defaultSlotsText.value;
       }
 
-      let pattern = /^(?!.*)/;
-      if (props.splitBySpace) {
-        const normalizeQuery = props.query.trim().replace(/\s+/g, " ");
-        pattern = new RegExp(
-          `(${normalizeQuery.split(/\s/).join("|")})`,
-          `g${props.caseSensitive ? "" : "i"}`
-        );
-      } else {
-        pattern = new RegExp(
-          `(${props.query})`,
-          `g${props.caseSensitive ? "" : "i"}`
-        );
-      }
+      const pattern = createHighlightPattern(
+        props.query,
+        props.splitBySpace,
+        props.caseSensitive
+      );
 
-      const words = defaultSlotText.value.split(pattern);
-      return words.map((w) => {
+      const words = defaultSlotsText.value.split(pattern);
+      return words.map((w: string) => {
         if (pattern.test(w)) {
           return h(
             "mark",
