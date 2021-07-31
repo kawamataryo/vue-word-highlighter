@@ -2576,10 +2576,10 @@ vue-tsc@^0.2.2:
   dependencies:
     vscode-vue-languageservice "^0.26.6"
 
-vue-word-highlighter@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/vue-word-highlighter/-/vue-word-highlighter-0.0.1.tgz#b3af1745d3138b8404d0d0ed9187914e1b0445aa"
-  integrity sha512-ooaU3+8IUeGDLujKnMgR/xiVGzEYluQ/j7pKjoxRjNAI3T6G5sX97krHNpGzuGhXfKiMqZ1fBqOnPR0OjqE2Mw==
+vue-word-highlighter@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/vue-word-highlighter/-/vue-word-highlighter-0.0.3.tgz#cf7ec2d0722f5b35e6156ad59de5450bfd3d421a"
+  integrity sha512-aXRiw+S0Jdt9l2dBWM1gfFtGiKJLANlsdFvqUHnVheJ0INRDFXaCjlxI6RUHA/QKRIRupGvQmbEevPjIqtY7Gg==
   dependencies:
     vue-demi "^0.11.2"
 
