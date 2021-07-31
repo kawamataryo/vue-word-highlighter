@@ -22,10 +22,24 @@ export default defineComponent({
     highlightClass: {
       type: [Object, String, Array],
       required: false,
+      default: "",
     },
     highlightStyle: {
       type: [Object, String, Array],
       required: false,
+      default: "",
+    },
+    regex: {
+      type: Boolean,
+      default: false,
+    },
+    highlightTag: {
+      type: String,
+      default: "mark",
+    },
+    wrapperTag: {
+      type: String,
+      default: "span",
     },
   },
   setup(props, ctx) {
@@ -38,17 +52,18 @@ export default defineComponent({
         return defaultSlotsText.value;
       }
 
-      const pattern = createHighlightPattern(
-        props.query,
-        props.splitBySpace,
-        props.caseSensitive
-      );
+      const pattern = createHighlightPattern({
+        query: props.query,
+        splitBySpace: props.splitBySpace,
+        caseSensitive: props.caseSensitive,
+        regex: props.regex,
+      });
 
       const words = defaultSlotsText.value.split(pattern);
       return words.map((w: string) => {
         if (pattern.test(w)) {
           return h(
-            "mark",
+            props.highlightTag,
             {
               class: props.highlightClass,
               style: props.highlightStyle,
@@ -60,6 +75,6 @@ export default defineComponent({
       });
     });
 
-    return () => h("span", {}, highlightWordChunk.value);
+    return () => h(props.wrapperTag, {}, highlightWordChunk.value);
   },
 });

@@ -1,16 +1,21 @@
-export const createHighlightPattern = (
-  query: string,
-  splitBySpace: boolean,
-  caseSensitive: boolean
-): RegExp => {
-  let pattern: string;
+const escapeRegExp = (text: string) => {
+  return text.replace(/[-\\^$*+?.()|[\]{}]/g, "\\$&");
+};
 
-  if (splitBySpace) {
-    const normalizeQuery = query.trim().replace(/\s+/g, " ");
+export const createHighlightPattern = (options: {
+  query: string;
+  splitBySpace: boolean;
+  caseSensitive: boolean;
+  regex: boolean;
+}): RegExp => {
+  let pattern: string;
+  const q = options.regex ? options.query : escapeRegExp(options.query);
+  if (options.splitBySpace) {
+    const normalizeQuery = q.trim().replace(/\s+/g, " ");
     pattern = `(${normalizeQuery.split(/\s/).join("|")})`;
   } else {
-    pattern = `(${query})`;
+    pattern = `(${q})`;
   }
 
-  return new RegExp(pattern, `g${caseSensitive ? "" : "i"}`);
+  return new RegExp(pattern, `g${options.caseSensitive ? "" : "i"}`);
 };

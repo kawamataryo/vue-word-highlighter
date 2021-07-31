@@ -1,7 +1,7 @@
 import { Slots } from "vue";
 import { isVue3 } from "vue-demi";
 
-export const getDefaultSlotsText = (slots: Slots) => {
+export const getDefaultSlotsText = (slots: Slots): string => {
   if (slots && slots.default) {
     const defaultSlot = slots.default();
     let slotText;
