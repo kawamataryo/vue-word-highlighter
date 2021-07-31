@@ -43,7 +43,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, ref } from "vue";
-import WordHighlighter from "../src/index.ts";
+import WordHighlighter from "vue-word-highlighter";
 
 const DEFAULT_PARAGRAPH =
   "Suspendisse phasellus libero placerat eros praesent justo dui lorem lobortis, montes\nsociosqu elementum nullam habitasse venenatis egestas dignissim enim, accumsan natoque\nnetus suscipit eu aenean mollis odio. Habitasse commodo est praesent sem morbi gravida\nmi";

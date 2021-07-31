@@ -1,10 +1,10 @@
 {
   "name": "vue-word-highlighter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The word highlighter library for Vue.js ",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.esm.js",
-  "unpkg": "dist/index.min.js",
+  "main": "dist/vue-word-highlighter.cjs.js",
+  "module": "dist/vue-word-highlighter.esm.js",
+  "unpkg": "dist/vue-word-highlighter.global.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
   "repository": "https://github.com/kawamataryo/vue-word-highlighter",
@@ -47,6 +47,7 @@
     "prettier": "2.3.2",
     "rollup": "^2.55.1",
     "rollup-plugin-dts": "^3.0.2",
+    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
     "rollup-plugin-vue": "^6.0.0",
     "sass": "^1.36.0",
@@ -54,9 +55,13 @@
     "typescript": "^4.3.2",
     "vite": "^2.4.4",
     "vue": "^3.0.5",
-    "vue-tsc": "^0.2.2"
+    "vue-tsc": "^0.2.2",
+    "vue-word-highlighter": "^0.0.1"
   },
   "lint-staged": {
-    "{src,web}/**/*.{js,ts,vue}": ["yarn format:fix","yarn lint:fix"]
+    "{src,web}/**/*.{js,ts,vue}": [
+      "yarn format:fix",
+      "yarn lint:fix"
+    ]
   }
 }
