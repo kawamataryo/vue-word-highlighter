@@ -5,3 +5,19 @@ $primary: #41b883;
 @import "node_modules/bulma/bulma";
 @import "node_modules/bulma-extensions/bulma-checkradio/src/sass/index";
 
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 30px 15px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0faf5;
+}
+@media screen and (max-width: 769px) {
+  #app {
+    padding-top: 50px;
+  }
+}

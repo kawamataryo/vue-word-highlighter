@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <ForkTag />
-    <h1 class="title is-size-3-mobile">
+    <h1 class="title is-size-2">
       <a
         href="https://github.com/kawamataryo/vue-word-highlighter"
         class="has-text-black"
@@ -72,30 +72,12 @@ export default defineComponent({
 });
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding: 0 15px;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f0faf5;
-}
-@media screen and (max-width: 769px) {
-  #app {
-    padding-top: 50px;
-  }
-}
-</style>
-
 <style scoped lang="scss">
 .title {
+  font-family: "Caveat", cursive;
   & > a > mark {
     background-color: #41b883;
-    padding: 0 5px;
+    padding: 0 10px 0 5px;
     color: #fff;
   }
 }
