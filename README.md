@@ -9,14 +9,14 @@ The word highlighter library for Vue 2.x & Vue 3.x 💅
 
 ## Installation
 
-**Vue3.x**
+**Vue 3.x**
 ```bash
 yarn add vue-word-highlighter
 # or
 npm install vue-word-highlighter
 ```
 
-**Vue2.x**  
+**Vue 2.x**  
 powered by [vue-demi](https://github.com/antfu/vue-demi).
 ```bash
 yarn add vue-word-highlighter @vue/composition-api
