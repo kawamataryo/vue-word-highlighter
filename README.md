@@ -4,7 +4,7 @@
 <a href="https://www.npmjs.com/package/vue-word-highlighter"><img src="https://img.shields.io/npm/v/vue-word-highlighter.svg" alt="Version"></a>
 <a href="https://www.npmjs.com/package/vue-word-highlighter"><img src="https://img.shields.io/npm/l/vue-word-highlighter.svg" alt="License"></a>
 
-The word highlighter library for Vue.js 2.x & 3.x 💅  
+The word highlighter library for Vue 2.x & Vue 3.x 💅  
 
 
 ## Installation
@@ -31,9 +31,9 @@ To use it, just provide it with a search words to props and a body of text to de
 ```vue
 <template>
   <WordHighlighter
-    query="highlighter"
+    query="vue"
   >
-    The word highlighter library for Vue.js 2.x & 3.x
+    The word highlighter library for Vue 2.x & Vue 3.x 💅
   </WordHighlighter
   >
 </template>
@@ -56,7 +56,7 @@ export default defineComponent({
 
 Output.
 
-![](https://i.gyazo.com/deb1a15b4275183ca2a50a382c6f46d1.png)
+![](https://i.gyazo.com/ca4c1c6b76a47797cc5318ef6d01d6f2.png)
 
 ## Props
 
