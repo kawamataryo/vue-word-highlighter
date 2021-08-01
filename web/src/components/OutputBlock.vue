@@ -70,9 +70,12 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .result-wrapper {
   background-color: #f5fffa;
   padding: 15px;
+  & > span {
+    white-space: pre-wrap;
+  }
 }
 </style>

@@ -1,15 +1,15 @@
 <template>
   <div class="container">
     <ForkTag />
-    <h1 class="title">
+    <h1 class="title is-size-3-mobile">
       <a
         href="https://github.com/kawamataryo/vue-word-highlighter"
         class="has-text-black"
-        >Vue word highlighter</a
+        >Vue Word <mark>Highlighter</mark></a
       >
     </h1>
     <p class="subtitle is-6 mt-3 mb-5">
-      The word highlighter library for Vue 2.x & Vue 3.x 🖍
+      The word highlighter library for Vue 2.x & Vue 3.x.
     </p>
     <div class="columns is-variable is-0-mobile">
       <div class="column is-half">
@@ -87,6 +87,16 @@ export default defineComponent({
 @media screen and (max-width: 769px) {
   #app {
     padding-top: 50px;
+  }
+}
+</style>
+
+<style scoped lang="scss">
+.title {
+  & > a > mark {
+    background-color: #41b883;
+    padding: 0 5px;
+    color: #fff;
   }
 }
 
