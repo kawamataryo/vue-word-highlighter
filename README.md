@@ -12,14 +12,14 @@ The word highlighter library for Vue 2.x & Vue 3.x 🖍
 
 ## Installation
 
-**Vue 3.x**
+### Vue 3.x
 ```bash
 yarn add vue-word-highlighter
 # or
 npm install vue-word-highlighter
 ```
 
-**Vue 2.x**  
+### Vue 2.x
 powered by [vue-demi](https://github.com/antfu/vue-demi).
 ```bash
 yarn add vue-word-highlighter @vue/composition-api
@@ -36,7 +36,7 @@ To use it, just provide it with a search words to props and a body of text to de
   <WordHighlighter
     query="vue"
   >
-    The word highlighter library for Vue 2.x & Vue 3.x 💅
+    The word highlighter library for Vue 2.x Vue 3.x 💅
   </WordHighlighter
   >
 </template>
