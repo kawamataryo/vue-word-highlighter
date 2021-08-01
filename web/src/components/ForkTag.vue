@@ -29,7 +29,7 @@ export default defineComponent({
 .fork__tag {
   position: fixed;
   z-index: 100;
-  top: 20px;
+  top: 16px;
   right: -50px;
   width: 180px;
   height: 50px;
@@ -37,7 +37,7 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   padding-bottom: 2px;
-  background-color: #eee;
+  background-color: #ddd;
   transform: rotate(45deg);
   transition: background-color 0.5s ease;
   .github__icon {
@@ -45,8 +45,8 @@ export default defineComponent({
     opacity: 0.8;
   }
   @media screen and (max-width: 414px) {
-    top: 5px;
-    right: -52.5px;
+    top: 9px;
+    right: -56.5px;
     .fork__description {
       display: none;
     }
@@ -63,7 +63,7 @@ export default defineComponent({
     }
     &:hover {
       transition: background-color 0.2s ease;
-      background-color: #ddd;
+      background-color: #ccc;
       cursor: pointer;
       .fork__description {
         opacity: 0.7;
