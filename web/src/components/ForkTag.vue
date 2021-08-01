@@ -37,7 +37,7 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   padding-bottom: 2px;
-  background-color: #eee;
+  background-color: rgba(#eee, 0.8);
   transform: rotate(45deg);
   transition: background-color 0.5s ease;
   .github__icon {
