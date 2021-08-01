@@ -21,5 +21,6 @@ module.exports = {
   ],
   "rules": {
 
-  }
+  },
+  "ignorePatterns": ["**/dist/**/*.js"]
 };

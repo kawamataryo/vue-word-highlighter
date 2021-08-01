@@ -11,9 +11,8 @@
   "author": "kawamataryo <ryo.kawamata0425@gmail.com>",
   "scripts": {
     "dev": "vite",
-    "build:web": "vue-tsc --noEmit && vite build",
+    "build:web": "vite build",
     "build:package": "rollup -c",
-    "serve": "vite preview",
     "lint": "eslint '{src,web,tests}/**/*.{js,ts,vue}'",
     "lint:fix": "eslint --fix '{src,web,tests}/**/*.{js,ts,vue}'",
     "format": "prettier '{src,web,tests}/**/*.{js,ts,vue}'",
