@@ -45,6 +45,7 @@
     "@vue/test-utils": "^2.0.0-rc.11",
     "@vue/test-utils1": "npm:@vue/test-utils@1",
     "bulma": "^0.9.3",
+    "bulma-extensions": "^6.2.7",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-vue": "^7.15.0",
