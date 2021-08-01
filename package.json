@@ -1,6 +1,6 @@
 {
   "name": "vue-word-highlighter",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "The word highlighter library for Vue.js ",
   "main": "dist/vue-word-highlighter.cjs.js",
   "module": "dist/vue-word-highlighter.esm.js",
@@ -11,9 +11,8 @@
   "author": "kawamataryo <ryo.kawamata0425@gmail.com>",
   "scripts": {
     "dev": "vite",
-    "build:web": "vue-tsc --noEmit && vite build",
+    "build:web": "vite build",
     "build:package": "rollup -c",
-    "serve": "vite preview",
     "lint": "eslint '{src,web,tests}/**/*.{js,ts,vue}'",
     "lint:fix": "eslint --fix '{src,web,tests}/**/*.{js,ts,vue}'",
     "format": "prettier '{src,web,tests}/**/*.{js,ts,vue}'",

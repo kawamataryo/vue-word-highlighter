@@ -1,10 +1,11 @@
 # Vue Word Highlighter
-<a href="https://npmcharts.com/compare/vue-word-highlighter?minimal=true"><img src="https://img.shields.io/npm/dm/vue-word-highlighter.svg" alt="Downloads"></a>
 <a href="https://npmcharts.com/compare/vue-word-highlighter?minimal=true"><img src="https://img.shields.io/npm/dt/vue-word-highlighter.svg" alt="Downloads"></a>
 <a href="https://www.npmjs.com/package/vue-word-highlighter"><img src="https://img.shields.io/npm/v/vue-word-highlighter.svg" alt="Version"></a>
 <a href="https://www.npmjs.com/package/vue-word-highlighter"><img src="https://img.shields.io/npm/l/vue-word-highlighter.svg" alt="License"></a>
 
-The word highlighter library for Vue 2.x & Vue 3.x 💅  
+The word highlighter library for Vue 2.x & Vue 3.x 🖍  
+
+### [Demo](https://kawamataryo.github.io/vue-word-highlighter/)
 
 
 ## Installation
