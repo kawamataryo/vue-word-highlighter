@@ -1,7 +1,13 @@
 <template>
   <div class="container">
     <ForkTag />
-    <h1 class="title">Vue word highlighter</h1>
+    <h1 class="title">
+      <a
+        href="https://github.com/kawamataryo/vue-word-highlighter"
+        class="has-text-black"
+        >Vue word highlighter</a
+      >
+    </h1>
     <p class="subtitle is-6 mt-3 mb-5">
       The word highlighter library for Vue 2.x & Vue 3.x 🖍
     </p>
@@ -76,7 +82,7 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f0f8ff;
+  background-color: #f0faf5;
 }
 @media screen and (max-width: 769px) {
   #app {

@@ -1,11 +1,11 @@
 <template>
-  <h1 class="title">Input</h1>
+  <h1 class="title is-size-4">Input</h1>
   <div class="field">
     <label class="label">Search words</label>
     <div class="control">
       <input
         :value="query"
-        class="input is-info"
+        class="input is-primary"
         type="text"
         placeholder="words"
         @input="onInput('query', $event)"
@@ -17,7 +17,7 @@
     <div class="control">
       <input
         id="options-case-sensitive"
-        class="is-checkradio is-info"
+        class="is-checkradio is-primary"
         :checked="caseSensitive"
         type="checkbox"
         @change="onChange('caseSensitive', $event)"
@@ -28,7 +28,7 @@
       <input
         id="options-split-by-space"
         :checked="splitBySpace"
-        class="is-checkradio is-info"
+        class="is-checkradio is-primary"
         type="checkbox"
         @change="onChange('splitBySpace', $event)"
       />
@@ -38,7 +38,7 @@
       <input
         id="options-regex"
         :checked="regex"
-        class="is-checkradio is-info"
+        class="is-checkradio is-primary"
         type="checkbox"
         @change="onChange('regex', $event)"
       />

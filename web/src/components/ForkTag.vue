@@ -37,7 +37,7 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   padding-bottom: 2px;
-  background-color: #ddd;
+  background-color: #eee;
   transform: rotate(45deg);
   transition: background-color 0.5s ease;
   .github__icon {
@@ -63,7 +63,7 @@ export default defineComponent({
     }
     &:hover {
       transition: background-color 0.2s ease;
-      background-color: #ccc;
+      background-color: #ddd;
       cursor: pointer;
       .fork__description {
         opacity: 0.7;

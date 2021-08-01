@@ -1,6 +1,5 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import "bulma/css/bulma.min.css";
-import "bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio.min.css";
+import "./assets/index.scss";
 
 createApp(App).mount("#app");

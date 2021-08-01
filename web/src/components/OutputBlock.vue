@@ -1,16 +1,16 @@
 <template>
-  <h1 class="title">Output</h1>
+  <h1 class="title is-size-4">Output</h1>
   <label class="label">Search words</label>
   <div class="tags">
     <span
       v-for="(word, index) in searchWords"
       :key="index"
-      class="tag is-info is-medium"
+      class="tag is-primary is-medium"
       >{{ word }}</span
     >
   </div>
   <label class="label">Result</label>
-  <div class="result-wrapper">
+  <div class="result-wrapper has-background-primary-light">
     <WordHighlighter
       :query="query"
       :split-by-space="splitBySpace"
@@ -72,7 +72,7 @@ export default defineComponent({
 
 <style scoped>
 .result-wrapper {
-  background-color: #f0f8ff;
+  background-color: #f5fffa;
   padding: 15px;
 }
 </style>
