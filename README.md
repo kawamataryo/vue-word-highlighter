@@ -5,6 +5,8 @@
 
 The word highlighter library for Vue 2.x & Vue 3.x 🖍  
 
+## [Demo](https://kawamataryo.github.io/vue-word-highlighter/)
+
 
 ## Installation
 
