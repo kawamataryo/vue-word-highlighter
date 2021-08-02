@@ -7,9 +7,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import GITHUB_ICON from "../../public/images/github-logo.png";
 
 const GITHUB_REPO = "https://github.com/kawamataryo/vue-word-highlighter";
-const GITHUB_ICON = "https://image.flaticon.com/icons/svg/25/25231.svg";
 
 export default defineComponent({
   name: "ForkTag",
@@ -37,12 +37,11 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   padding-bottom: 2px;
-  background-color: rgba(#eee, 0.8);
+  background-color: #000;
   transform: rotate(45deg);
   transition: background-color 0.5s ease;
   .github__icon {
-    width: 30px;
-    opacity: 0.8;
+    width: 75px;
   }
   @media screen and (max-width: 414px) {
     top: 9px;
@@ -63,7 +62,7 @@ export default defineComponent({
     }
     &:hover {
       transition: background-color 0.2s ease;
-      background-color: #ddd;
+      background-color: #444;
       cursor: pointer;
       .fork__description {
         opacity: 0.7;
