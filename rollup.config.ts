@@ -28,6 +28,7 @@ export default defineConfig([
         format: 'cjs',
         file: pkg.main,
         sourcemap: true,
+        exports: "default",
       },
       {
         file: pkg.unpkg,
