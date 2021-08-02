@@ -21,12 +21,10 @@ export default defineComponent({
     },
     highlightClass: {
       type: [Object, String, Array],
-      required: false,
       default: "",
     },
     highlightStyle: {
       type: [Object, String, Array],
-      required: false,
       default: "",
     },
     highlightTag: {
@@ -36,6 +34,10 @@ export default defineComponent({
     wrapperTag: {
       type: String,
       default: "span",
+    },
+    wrapperClass: {
+      type: [Object, String, Array],
+      default: "",
     },
   },
   setup(props, ctx) {
@@ -73,6 +75,13 @@ export default defineComponent({
       });
     });
 
-    return () => h(props.wrapperTag, {}, highlightWordChunk.value);
+    return () =>
+      h(
+        props.wrapperTag,
+        {
+          class: props.wrapperClass,
+        },
+        highlightWordChunk.value
+      );
   },
 });
