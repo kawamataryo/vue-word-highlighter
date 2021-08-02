@@ -24,10 +24,10 @@ export default defineConfig([
         sourcemap: true,
       },
       {
-        exports: 'named',
         compact: true,
         format: 'cjs',
-        file: pkg.main
+        file: pkg.main,
+        sourcemap: true,
       },
       {
         file: pkg.unpkg,
