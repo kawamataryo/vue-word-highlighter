@@ -65,10 +65,9 @@ Output.
 
 | Property | Type | Required? | Description |
 |:---|:---|:---:|:---|
-| query | String | ✓ | Search words. use regular expressions in the search string if `regex` is true. |
+| query | String or RegExp | ✓ | Search words. Can be use string or regular expressions. |
 | caseSensitive | Boolean |  | Search should be case sensitive. defaults to `false` |
 | splitBySpace | Boolean |  | whether split the string with spaces to make it a search string. If false, string being searched as a whole word. defaults to `false` |
-| regex | Boolean |  | `query` string is evaluated as a regular expression. default to `false`|
 | highlightClass | String or Object or Array |  | The class name to be applied to an highlight tag.|
 | highlightStyle | String or Object |  | The inline style to be applied to an highlight tag. |
 | highlightTag | String |  | Type of tag to wrap around highlighted matches; defaults to `mark` |

@@ -19,7 +19,6 @@
             v-model:paragraph="paragraph"
             v-model:caseSensitive="options.caseSensitive"
             v-model:splitBySpace="options.splitBySpace"
-            v-model:regex="options.regex"
           ></InputBlock>
         </div>
       </div>
@@ -30,7 +29,6 @@
             :paragraph="paragraph"
             :case-sensitive="options.caseSensitive"
             :split-by-space="options.splitBySpace"
-            :regex="options.regex"
           ></OutputBlock>
         </div>
       </div>
@@ -60,7 +58,6 @@ export default defineComponent({
     const options = reactive({
       caseSensitive: false,
       splitBySpace: true,
-      regex: false,
     });
 
     return {

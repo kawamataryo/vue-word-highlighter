@@ -92,4 +92,38 @@ describe("VueWordHighlighter", () => {
       });
     });
   });
+
+  describe("regex", () => {
+    it("should highlight word if literal", () => {
+      const wrapper = createWrapper(
+        {
+          query: /s\w+y/,
+          regex: true,
+        },
+        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
+      );
+
+      const highlightWords = wrapper.findAll("mark");
+
+      expect(highlightWords.length).toBe(2);
+      expect(highlightWords[0].text()).toBe("simply");
+      expect(highlightWords[1].text()).toBe("sticky");
+    });
+  });
+
+  it("should highlight word if instance", () => {
+    const wrapper = createWrapper(
+      {
+        query: new RegExp("s\\w+y"),
+        regex: true,
+      },
+      "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
+    );
+
+    const highlightWords = wrapper.findAll("mark");
+
+    expect(highlightWords.length).toBe(2);
+    expect(highlightWords[0].text()).toBe("simply");
+    expect(highlightWords[1].text()).toBe("sticky");
+  });
 });

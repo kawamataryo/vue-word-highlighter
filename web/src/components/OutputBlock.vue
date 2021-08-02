@@ -15,7 +15,6 @@
       :query="query"
       :split-by-space="splitBySpace"
       :case-sensitive="caseSensitive"
-      :regex="regex"
       >{{ paragraph }}
     </WordHighlighter>
   </div>
@@ -44,10 +43,6 @@ export default defineComponent({
       required: true,
     },
     splitBySpace: {
-      type: Boolean,
-      required: true,
-    },
-    regex: {
       type: Boolean,
       required: true,
     },

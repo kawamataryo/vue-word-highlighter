@@ -34,16 +34,6 @@
       />
       <label for="options-split-by-space">Split by space</label>
     </div>
-    <div class="control">
-      <input
-        id="options-regex"
-        :checked="regex"
-        class="is-checkradio is-primary"
-        type="checkbox"
-        @change="onChange('regex', $event)"
-      />
-      <label for="options-regex">Regex</label>
-    </div>
   </div>
   <div class="field is-hidden-mobile">
     <label class="label">Search target text</label>
@@ -58,7 +48,9 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, reactive, ref } from "vue";
+import { defineComponent } from "vue";
+
+type EmitName = "query" | "paragraph" | "caseSensitive" | "splitBySpace";
 
 export default defineComponent({
   name: "InputBlock",
@@ -79,23 +71,18 @@ export default defineComponent({
       type: Boolean,
       required: true,
     },
-    regex: {
-      type: Boolean,
-      required: true,
-    },
   },
   emits: [
     "update:query",
     "update:paragraph",
     "update:caseSensitive",
     "update:splitBySpace",
-    "update:regex",
   ],
   setup(_, ctx) {
-    const onChange = (name, e) => {
+    const onChange = (name: EmitName, e: { target: HTMLInputElement }) => {
       ctx.emit(`update:${name}`, e.target.checked);
     };
-    const onInput = (name, e) => {
+    const onInput = (name: EmitName, e: { target: HTMLInputElement }) => {
       ctx.emit(`update:${name}`, e.target.value);
     };
     return {

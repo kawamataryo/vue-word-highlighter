@@ -1,4 +1,4 @@
-import { defineComponent, h, computed, install } from "vue-demi";
+import { defineComponent, h, computed, install, PropType } from "vue-demi";
 import { createHighlightPattern } from "../utils/createHighlightPattern";
 import { getDefaultSlotsText } from "../utils/getDefaultSlotsText";
 
@@ -8,7 +8,7 @@ export default defineComponent({
   name: "VueWordHighlighter",
   props: {
     query: {
-      type: String,
+      type: [String, Object] as PropType<string | RegExp>,
       required: true,
     },
     caseSensitive: {
@@ -29,10 +29,6 @@ export default defineComponent({
       required: false,
       default: "",
     },
-    regex: {
-      type: Boolean,
-      default: false,
-    },
     highlightTag: {
       type: String,
       default: "mark",
@@ -48,7 +44,10 @@ export default defineComponent({
     });
 
     const highlightWordChunk = computed(() => {
-      if (!props.query || !props.query.trim()) {
+      if (
+        !props.query ||
+        (props.query instanceof String && !props.query.trim())
+      ) {
         return defaultSlotsText.value;
       }
 
@@ -56,7 +55,6 @@ export default defineComponent({
         query: props.query,
         splitBySpace: props.splitBySpace,
         caseSensitive: props.caseSensitive,
-        regex: props.regex,
       });
 
       const words = defaultSlotsText.value.split(pattern);
