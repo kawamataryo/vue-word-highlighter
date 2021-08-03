@@ -1,0 +1,29 @@
+{
+  "name": "tests-vue2",
+  "version": "0.1.13",
+  "private": true,
+  "scripts": {
+    "test": "jest ./tests"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.4.8",
+    "@vue/composition-api": "^1.0.4",
+    "@vue/test-utils": "^1.2.2",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.2",
+    "vue": "^2.6.14",
+    "vue-demi": "^0.11.2",
+    "vue-jest": "^3.0.7",
+    "babel-core": "^6.26.3",
+    "vue-template-compiler": "^2.6.14",
+    "vue-word-highlighter": "^0.1.13"
+  },
+  "lint-staged": {
+    "{vue-word-highlighter,example}/**/*.{js,ts,vue}": [
+      "yarn format:fix",
+      "yarn lint:fix"
+    ]
+  }
+}

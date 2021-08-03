@@ -1,0 +1,35 @@
+{
+  "name": "vue-word-highlighter",
+  "version": "0.1.13",
+  "description": "The word highlighter library for Vue.js ",
+  "main": "dist/vue-word-highlighter.cjs.js",
+  "module": "dist/vue-word-highlighter.esm.js",
+  "unpkg": "dist/vue-word-highlighter.global.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "repository": "https://github.com/kawamataryo/vue-word-highlighter",
+  "author": "kawamataryo <ryo.kawamata0425@gmail.com>",
+  "scripts": {
+    "build": "rollup -c",
+    "release": "yarn build && npx bumpp --tag --commit --push && yarn publish"
+  },
+  "dependencies": {
+    "vue-demi": "^0.11.2"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "rollup": "^2.55.1",
+    "rollup-plugin-dts": "^3.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-vue": "^6.0.0"
+  }
+}

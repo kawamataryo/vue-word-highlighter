@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
-import WordHighlighter from "../../../src/components";
+import WordHighlighter from "../../../vue-word-highlighter/src/components";
 
 export default defineComponent({
   name: "OutputBlock",

@@ -1,6 +1,6 @@
 // @ts-expect-error: TODO
 import { mount } from "@vue/test-utils";
-import VueWordHighlighter from "../../src/components";
+import VueWordHighlighter from "../../vue-word-highlighter/src/components";
 
 describe("VueWordHighlighter", () => {
   const createWrapper = (props: Record<string, any>, defaultSlot: string) => {

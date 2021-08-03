@@ -1,7 +1,8 @@
-import { Slots } from "vue";
 import { isVue3 } from "vue-demi";
 
-export const getDefaultSlotsText = (slots: Slots): string => {
+type Slots = { default?: () => { children: string; text: string }[] };
+
+export const getDefaultSlotsText = (slots?: Slots): string => {
   if (slots && slots.default) {
     const defaultSlot = slots.default();
     let slotText;
@@ -9,7 +10,7 @@ export const getDefaultSlotsText = (slots: Slots): string => {
       slotText = defaultSlot[0].children;
     } else {
       // vue 2 slots text is in vnode's text attribute
-      slotText = (defaultSlot[0] as any).text;
+      slotText = defaultSlot[0].text;
     }
     if (typeof slotText === "string") {
       return slotText;
