@@ -15,13 +15,18 @@
       :query="query"
       :split-by-space="splitBySpace"
       :case-sensitive="caseSensitive"
+      @match="
+        (e) => {
+          hasMatchWord = e;
+        }
+      "
       >{{ paragraph }}
     </WordHighlighter>
   </div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from "vue";
+import { computed, defineComponent, ref } from "vue";
 import WordHighlighter from "../../../vue-word-highlighter/src/components";
 
 export default defineComponent({
@@ -58,8 +63,11 @@ export default defineComponent({
       return props.query.trim().split(/\s+/);
     });
 
+    const hasMatchWord = ref(false);
+
     return {
       searchWords,
+      hasMatchWord,
     };
   },
 });

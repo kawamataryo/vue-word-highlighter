@@ -59,7 +59,6 @@ export default defineComponent({
       caseSensitive: false,
       splitBySpace: true,
     });
-
     return {
       query,
       paragraph,

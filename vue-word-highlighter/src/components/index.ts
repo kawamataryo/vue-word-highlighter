@@ -1,4 +1,11 @@
-import { defineComponent, h, computed, install, PropType } from "vue-demi";
+import {
+  defineComponent,
+  h,
+  computed,
+  install,
+  PropType,
+  watch,
+} from "vue-demi";
 import { createHighlightPattern } from "../utils/createHighlightPattern";
 import { getDefaultSlotsText } from "../utils/getDefaultSlotsText";
 
@@ -44,6 +51,7 @@ export default defineComponent({
       default: "",
     },
   },
+  emits: ["match"],
   setup(props, ctx) {
     const targetText = computed(() => {
       // If textToHighlight is exist, give priority to that.
@@ -52,6 +60,10 @@ export default defineComponent({
       }
       return getDefaultSlotsText(ctx.slots);
     });
+
+    const emitsMatchEvent = (isMatch: boolean) => {
+      ctx.emit("match", isMatch);
+    };
 
     const highlightWordChunk = computed(() => {
       if (
@@ -68,6 +80,7 @@ export default defineComponent({
       });
 
       const words = targetText.value.split(pattern);
+
       return words.map((w: string) => {
         if (pattern.test(w)) {
           return h(
@@ -82,6 +95,19 @@ export default defineComponent({
         return w;
       });
     });
+
+    watch(
+      () => props.query,
+      (to, from) => {
+        emitsMatchEvent(
+          Array.isArray(highlightWordChunk.value) &&
+            highlightWordChunk.value.length > 1
+        );
+      },
+      {
+        immediate: true,
+      }
+    );
 
     return () =>
       h(

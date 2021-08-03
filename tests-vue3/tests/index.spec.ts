@@ -101,7 +101,6 @@ describe("VueWordHighlighter", () => {
       const wrapper = createWrapper(
         {
           query: /s\w+y/,
-          regex: true,
         },
         "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
       );
@@ -117,7 +116,6 @@ describe("VueWordHighlighter", () => {
       const wrapper = createWrapper(
         {
           query: new RegExp("s\\w+y"),
-          regex: true,
         },
         "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
       );
@@ -137,7 +135,6 @@ describe("VueWordHighlighter", () => {
       const wrapper = createWrapper(
         {
           query: "dummy",
-          regex: true,
           textToHighlight,
         },
         ""
@@ -156,7 +153,6 @@ describe("VueWordHighlighter", () => {
       const wrapper = createWrapper(
         {
           query: "dummy",
-          regex: true,
           highlightTag: "b",
         },
         "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
@@ -175,7 +171,6 @@ describe("VueWordHighlighter", () => {
       const wrapper = createWrapper(
         {
           query: "dummy",
-          regex: true,
           highlightClass: ["red-color"],
         },
         "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
@@ -193,7 +188,6 @@ describe("VueWordHighlighter", () => {
       const wrapper = createWrapper(
         {
           query: "dummy",
-          regex: true,
           highlightStyle: {
             color: "green",
           },
@@ -215,7 +209,6 @@ describe("VueWordHighlighter", () => {
       const wrapper = createWrapper(
         {
           query: "dummy",
-          regex: true,
           wrapperTag: "div",
         },
         textToHighlight
@@ -236,7 +229,6 @@ describe("VueWordHighlighter", () => {
       const wrapper = createWrapper(
         {
           query: "dummy",
-          regex: true,
           wrapperClass: ["mb-2", "is-primary"],
         },
         textToHighlight
@@ -247,6 +239,34 @@ describe("VueWordHighlighter", () => {
       expect(highlightWords.length).toBe(1);
       expect(highlightWords[0].text()).toBe("dummy");
       expect(wrapper.classes()).toEqual(["mb-2", "is-primary"]);
+    });
+  });
+
+  describe("emits", () => {
+    describe("match", () => {
+      it("should fire at change query", async () => {
+        const textToHighlight =
+          "Lorem Ipsum is simply dummy text of the printing and typesetting.";
+        const wrapper = createWrapper(
+          {
+            query: "dummy",
+          },
+          textToHighlight
+        );
+        console.log(wrapper.emitted());
+        expect(wrapper.emitted().match.length).toBe(1);
+        expect(wrapper.emitted().match[0][0]).toBe(true);
+
+        await wrapper.setProps({ query: "hello world" });
+
+        expect(wrapper.emitted().match.length).toBe(2);
+        expect(wrapper.emitted().match[1][0]).toBe(false);
+
+        await wrapper.setProps({ query: "Lorem" });
+
+        expect(wrapper.emitted().match.length).toBe(3);
+        expect(wrapper.emitted().match[2][0]).toBe(true);
+      });
     });
   });
 });
