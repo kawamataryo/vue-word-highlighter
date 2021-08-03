@@ -109,21 +109,42 @@ describe("VueWordHighlighter", () => {
       expect(highlightWords[0].text()).toBe("simply");
       expect(highlightWords[1].text()).toBe("sticky");
     });
+
+    it("should highlight word if instance", () => {
+      const wrapper = createWrapper(
+        {
+          query: new RegExp("s\\w+y"),
+          regex: true,
+        },
+        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
+      );
+
+      const highlightWords = wrapper.findAll("mark");
+
+      expect(highlightWords.length).toBe(2);
+      expect(highlightWords[0].text()).toBe("simply");
+      expect(highlightWords[1].text()).toBe("sticky");
+    });
   });
 
-  it("should highlight word if instance", () => {
-    const wrapper = createWrapper(
-      {
-        query: new RegExp("s\\w+y"),
-        regex: true,
-      },
-      "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
-    );
+  describe("textToHighlight", () => {
+    it("should highlight word", () => {
+      const textToHighlight =
+        "Lorem Ipsum is simply dummy text of the printing and typesetting.";
+      const wrapper = createWrapper(
+        {
+          query: "dummy",
+          regex: true,
+          textToHighlight,
+        },
+        ""
+      );
 
-    const highlightWords = wrapper.findAll("mark");
+      const highlightWords = wrapper.findAll("mark");
 
-    expect(highlightWords.length).toBe(2);
-    expect(highlightWords[0].text()).toBe("simply");
-    expect(highlightWords[1].text()).toBe("sticky");
+      expect(highlightWords.length).toBe(1);
+      expect(highlightWords[0].text()).toBe("dummy");
+      expect(wrapper.text()).toBe(textToHighlight);
+    });
   });
 });

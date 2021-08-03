@@ -39,9 +39,17 @@ export default defineComponent({
       type: [Object, String, Array],
       default: "",
     },
+    textToHighlight: {
+      type: String,
+      default: "",
+    },
   },
   setup(props, ctx) {
-    const defaultSlotsText = computed(() => {
+    const targetText = computed(() => {
+      // If textToHighlight is exist, give priority to that.
+      if (props.textToHighlight) {
+        return props.textToHighlight;
+      }
       return getDefaultSlotsText(ctx.slots);
     });
 
@@ -50,7 +58,7 @@ export default defineComponent({
         !props.query ||
         (props.query instanceof String && !props.query.trim())
       ) {
-        return defaultSlotsText.value;
+        return targetText.value;
       }
 
       const pattern = createHighlightPattern({
@@ -59,7 +67,7 @@ export default defineComponent({
         caseSensitive: props.caseSensitive,
       });
 
-      const words = defaultSlotsText.value.split(pattern);
+      const words = targetText.value.split(pattern);
       return words.map((w: string) => {
         if (pattern.test(w)) {
           return h(

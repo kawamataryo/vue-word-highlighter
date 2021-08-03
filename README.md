@@ -4,6 +4,7 @@
 <a href="https://npmcharts.com/compare/vue-word-highlighter?minimal=true"><img src="https://img.shields.io/npm/dt/vue-word-highlighter.svg" alt="Downloads"></a>
 <a href="https://www.npmjs.com/package/vue-word-highlighter"><img src="https://img.shields.io/npm/v/vue-word-highlighter.svg" alt="Version"></a>
 <a href="https://www.npmjs.com/package/vue-word-highlighter"><img src="https://img.shields.io/npm/l/vue-word-highlighter.svg" alt="License"></a>
+<a href="https://github.com/kawamataryo/vue-word-highlighter" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/kawamataryo/vue-word-highlighter?style=social"></a>
 
 The word highlighter library for Vue 2.x & Vue 3.x. 
 
@@ -34,12 +35,15 @@ To use it, just provide it with a search words to props and a body of text to de
 
 ```vue
 <template>
-  <WordHighlighter
-    query="vue"
-  >
+  <WordHighlighter query="vue">
     The word highlighter library for Vue 2.x Vue 3.x 💅
-  </WordHighlighter
-  >
+  </WordHighlighter>
+  <!--  or
+  <WordHighlighter 
+    query="vue"
+    textToHighlight="The word highlighter library for Vue 2.x Vue 3.x 💅"
+  />
+  -->
 </template>
 
 <script lang="ts">
@@ -74,6 +78,7 @@ Output.
 | highlightStyle | String or Object or Array | | Styles to be applied to highlighted tag. Similar to style bindings in vue, it accepts Array syntax, Object syntax, or plain styling as String. |
 | wrapperTag | String |  | Type of tag to wrap around whole text; defaults to `span`. |
 | wrapperClass | String or Object or Array |  | Classes to be added to  wrap around whole tag. Similar to class bindings in vue, it accepts Array syntax, Object syntax, or class as String. |
+| textToHighlight | String |  | Text to highlight matches in. If this is not specified, the default slot value will be used for the search.  |
 
 ## License
 
