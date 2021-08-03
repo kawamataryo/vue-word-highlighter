@@ -3,7 +3,10 @@ import { mount } from "@vue/test-utils";
 import VueWordHighlighter from "../../vue-word-highlighter/src/components";
 
 describe("VueWordHighlighter", () => {
-  const createWrapper = (props: Record<string, any>, defaultSlot: string) => {
+  const createWrapper = (
+    props: Record<string, unknown>,
+    defaultSlot: string
+  ) => {
     return mount(VueWordHighlighter, {
       propsData: props,
       slots: {
@@ -192,7 +195,7 @@ describe("VueWordHighlighter", () => {
           query: "dummy",
           regex: true,
           highlightStyle: {
-            color: "green"
+            color: "green",
           },
         },
         "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
@@ -213,7 +216,7 @@ describe("VueWordHighlighter", () => {
         {
           query: "dummy",
           regex: true,
-          wrapperTag: "div"
+          wrapperTag: "div",
         },
         textToHighlight
       );
@@ -222,7 +225,7 @@ describe("VueWordHighlighter", () => {
 
       expect(highlightWords.length).toBe(1);
       expect(highlightWords[0].text()).toBe("dummy");
-      expect(wrapper.text()).toBe(textToHighlight)
+      expect(wrapper.text()).toBe(textToHighlight);
     });
   });
 
@@ -234,7 +237,7 @@ describe("VueWordHighlighter", () => {
         {
           query: "dummy",
           regex: true,
-          wrapperClass: ["mb-2", "is-primary"]
+          wrapperClass: ["mb-2", "is-primary"],
         },
         textToHighlight
       );

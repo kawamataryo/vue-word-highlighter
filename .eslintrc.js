@@ -22,5 +22,5 @@ module.exports = {
   "rules": {
 
   },
-  "ignorePatterns": ["**/dist/**/*.*"]
+  "ignorePatterns": ["**/dist/**/*.*", "**/*/jest.config.js"]
 };

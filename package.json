@@ -2,10 +2,10 @@
   "private": true,
   "workspaces": ["vue-word-highlighter", "example", "tests-vue3", "tests-vue2"],
   "scripts": {
-    "lint": "eslint '{vue-word-highlighter,example}/**/*.{js,ts,vue}'",
-    "lint:fix": "eslint --fix '{vue-word-highlighter,example}/**/*.{js,ts,vue}'",
-    "format": "prettier '{vue-word-highlighter,example}/**/*.{js,ts,vue}'",
-    "format:fix": "prettier --write '{vue-word-highlighter,example}/**/*.{js,ts,vue}'",
+    "lint": "eslint '{vue-word-highlighter,example,tests-vue3,tests-vue2}/**/*.{js,ts,vue}'",
+    "lint:fix": "eslint --fix '{vue-word-highlighter,example,tests-vue3,tests-vue2}/**/*.{js,ts,vue}'",
+    "format": "prettier '{vue-word-highlighter,example,tests-vue3,tests-vue2}/**/*.{js,ts,vue}'",
+    "format:fix": "prettier --write '{vue-word-highlighter,example,tests-vue3,tests-vue2}/**/*.{js,ts,vue}'",
     "prepare": "husky install",
     "build:package": "yarn workspace vue-word-highlighter run build",
     "release:package": "yarn workspace vue-word-highlighter run release",
@@ -41,7 +41,7 @@
     "prettier": "2.3.2"
   },
   "lint-staged": {
-    "{vue-word-highlighter,example}/**/*.{js,ts,vue}": [
+    "{vue-word-highlighter,example,tests-vue3,tests-vue2}/**/*.{js,ts,vue}": [
       "yarn format:fix",
       "yarn lint:fix"
     ]

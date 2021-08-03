@@ -2,7 +2,10 @@ import { mount } from "@vue/test-utils1";
 import VueWordHighlighter from "vue-word-highlighter";
 
 describe("VueWordHighlighter", () => {
-  const createWrapper = (props: Record<string, any>, defaultSlot: string) => {
+  const createWrapper = (
+    props: Record<string, unknown>,
+    defaultSlot: string
+  ) => {
     return mount(VueWordHighlighter, {
       propsData: props,
       slots: {
