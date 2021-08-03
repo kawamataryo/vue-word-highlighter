@@ -147,4 +147,103 @@ describe("VueWordHighlighter", () => {
       expect(wrapper.text()).toBe(textToHighlight);
     });
   });
+
+  describe("highlightTag", () => {
+    it("should set specified tag to highlight tag", () => {
+      const wrapper = createWrapper(
+        {
+          query: "dummy",
+          regex: true,
+          highlightTag: "b",
+        },
+        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
+      );
+
+      const highlightWords = wrapper.findAll("b");
+
+      expect(highlightWords.length).toBe(1);
+      expect(highlightWords[0].text()).toBe("dummy");
+      expect(wrapper.find("mark").exists()).toBe(false);
+    });
+  });
+
+  describe("highlightClass", () => {
+    it("should set specified class to highlight tag", () => {
+      const wrapper = createWrapper(
+        {
+          query: "dummy",
+          regex: true,
+          highlightClass: ["red-color"],
+        },
+        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
+      );
+
+      const highlightWords = wrapper.find("mark");
+
+      expect(highlightWords.text()).toBe("dummy");
+      expect(highlightWords.classes()[0]).toBe("red-color");
+    });
+  });
+
+  describe("highlightStyle", () => {
+    it("should set specified style to highlight tag", () => {
+      const wrapper = createWrapper(
+        {
+          query: "dummy",
+          regex: true,
+          highlightStyle: {
+            color: "green"
+          },
+        },
+        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
+      );
+
+      const highlightWords = wrapper.find("mark");
+
+      expect(highlightWords.text()).toBe("dummy");
+      expect(highlightWords.attributes().style).toBe("color: green;");
+    });
+  });
+
+  describe("wrapperTag", () => {
+    it("should set specified tag to wrapper tag", () => {
+      const textToHighlight =
+        "Lorem Ipsum is simply dummy text of the printing and typesetting.";
+      const wrapper = createWrapper(
+        {
+          query: "dummy",
+          regex: true,
+          wrapperTag: "div"
+        },
+        textToHighlight
+      );
+
+      const highlightWords = wrapper.findAll("mark");
+
+      expect(highlightWords.length).toBe(1);
+      expect(highlightWords[0].text()).toBe("dummy");
+      expect(wrapper.text()).toBe(textToHighlight)
+    });
+  });
+
+  describe("wrapperClass", () => {
+    it("should set specified style to wrapper tag", () => {
+      const textToHighlight =
+        "Lorem Ipsum is simply dummy text of the printing and typesetting.";
+      const wrapper = createWrapper(
+        {
+          query: "dummy",
+          regex: true,
+          wrapperClass: ["mb-2", "is-primary"]
+        },
+        textToHighlight
+      );
+
+      const highlightWords = wrapper.findAll("mark");
+
+      expect(highlightWords.length).toBe(1);
+      expect(highlightWords[0].text()).toBe("dummy");
+      expect(wrapper.classes()).toEqual(["mb-2", "is-primary"]);
+    });
+  });
 });
