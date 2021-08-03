@@ -29,6 +29,8 @@ yarn add vue-word-highlighter @vue/composition-api
 npm install vue-word-highlighter @vue/composition-api
 ```
 
+If you get a `Uncaught TypeError: e.defineComponent is not a function` error, and it doesn't work, try [this one](https://github.com/vueuse/vue-demi#manually-switch-versions) from vue-demi
+
 ## Usage
 To use it, just provide it with a search words to props and a body of text to default slots.
 
