@@ -1,26 +1,18 @@
 {
-  "name": "vue-word-highlighter",
-  "version": "0.1.13",
-  "description": "The word highlighter library for Vue.js ",
-  "main": "dist/vue-word-highlighter.cjs.js",
-  "module": "dist/vue-word-highlighter.esm.js",
-  "unpkg": "dist/vue-word-highlighter.global.js",
-  "types": "dist/index.d.ts",
-  "license": "MIT",
-  "repository": "https://github.com/kawamataryo/vue-word-highlighter",
-  "author": "kawamataryo <ryo.kawamata0425@gmail.com>",
+  "private": true,
+  "workspaces": ["vue-word-highlighter", "example", "tests-vue3", "tests-vue2"],
   "scripts": {
-    "dev": "vite",
-    "build:web": "vite build",
-    "build:package": "rollup -c",
-    "lint": "eslint '{src,web,tests}/**/*.{js,ts,vue}'",
-    "lint:fix": "eslint --fix '{src,web,tests}/**/*.{js,ts,vue}'",
-    "format": "prettier '{src,web,tests}/**/*.{js,ts,vue}'",
-    "format:fix": "prettier --write '{src,web,tests}/**/*.{js,ts,vue}'",
+    "lint": "eslint '{vue-word-highlighter,example}/**/*.{js,ts,vue}'",
+    "lint:fix": "eslint --fix '{vue-word-highlighter,example}/**/*.{js,ts,vue}'",
+    "format": "prettier '{vue-word-highlighter,example}/**/*.{js,ts,vue}'",
+    "format:fix": "prettier --write '{vue-word-highlighter,example}/**/*.{js,ts,vue}'",
     "prepare": "husky install",
-    "release": "yarn build:package && npx bumpp --tag --commit --push && yarn publish",
-    "test:2": "vue-demi-switch 2 vue2 && jest ./tests/vue2",
-    "test:3": "vue-demi-switch 3 && jest ./tests/vue3"
+    "build:package": "yarn workspace vue-word-highlighter run build",
+    "release:package": "yarn workspace vue-word-highlighter run release",
+    "build:example": "yarn workspace example run build",
+    "dev:example": "yarn workspace example run dev",
+    "test:v2": "vue-demi-switch 2 vue2 && yarn workspace tests-vue2 run test",
+    "test:v3": "vue-demi-switch 3 && yarn workspace tests-vue3 run test"
   },
   "dependencies": {
     "vue-demi": "^0.11.2"
@@ -35,42 +27,21 @@
     }
   },
   "devDependencies": {
-    "@types/jest": "^26.0.24",
+    "@vue/composition-api": "^1.0.4",
     "@types/node": "^16.4.8",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
-    "@vitejs/plugin-vue": "^1.3.0",
-    "@vue/compiler-sfc": "^3.0.5",
-    "@vue/composition-api": "^1.0.4",
-    "@vue/test-utils": "^2.0.0-rc.11",
-    "@vue/test-utils1": "npm:@vue/test-utils@1",
-    "bulma": "^0.9.3",
-    "bulma-extensions": "^6.2.7",
+    "vue": "^3.0.0",
+    "vue2": "npm:vue@2",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-vue": "^7.15.0",
     "husky": "^7.0.0",
-    "jest": "^27.0.6",
     "lint-staged": ">=10",
-    "prettier": "2.3.2",
-    "rollup": "^2.55.1",
-    "rollup-plugin-dts": "^3.0.2",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0",
-    "rollup-plugin-vue": "^6.0.0",
-    "sass": "^1.36.0",
-    "ts-jest": "^27.0.4",
-    "typescript": "^4.3.2",
-    "vite": "^2.4.4",
-    "vue": "^3.0.5",
-    "vue-jest": "^5.0.0-alpha.10",
-    "vue-template-compiler": "^2.6.14",
-    "vue-tsc": "^0.2.2",
-    "vue-word-highlighter": "0.0.3",
-    "vue2": "npm:vue@2"
+    "prettier": "2.3.2"
   },
   "lint-staged": {
-    "{src,web}/**/*.{js,ts,vue}": [
+    "{vue-word-highlighter,example}/**/*.{js,ts,vue}": [
       "yarn format:fix",
       "yarn lint:fix"
     ]

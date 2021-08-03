@@ -33,12 +33,12 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: Build Vite site
-        run: yarn build:web
+        run: yarn build:example
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
-          build_dir: web/dist
+          build_dir: example/dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -10,5 +10,5 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"]
   },
-  "exclude": ["tests/**/*.ts"]
+  "exclude": ["test*/**/*.ts"]
 }

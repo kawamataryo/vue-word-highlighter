@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils1";
-import VueWordHighlighter from "../../src/components";
+import VueWordHighlighter from "vue-word-highlighter";
 
 describe("VueWordHighlighter", () => {
   const createWrapper = (props: Record<string, any>, defaultSlot: string) => {
