@@ -1,13 +1,6 @@
-import {
-  defineComponent,
-  h,
-  computed,
-  install,
-  PropType,
-  watch,
-} from "vue-demi";
-import { createHighlightPattern } from "../utils/createHighlightPattern";
+import { defineComponent, h, install, PropType } from "vue-demi";
 import { getDefaultSlotsText } from "../utils/getDefaultSlotsText";
+import { getHighlightWordChunk } from "../utils/getHighlightWordChunk";
 
 install();
 
@@ -53,69 +46,36 @@ export default defineComponent({
   },
   emits: ["matches"],
   setup(props, ctx) {
-    const targetText = computed(() => {
+    return () => {
       // If textToHighlight is exist, give priority to that.
-      if (props.textToHighlight) {
-        return props.textToHighlight;
-      }
-      return getDefaultSlotsText(ctx.slots);
-    });
+      const targetText = props.textToHighlight
+        ? props.textToHighlight
+        : getDefaultSlotsText(ctx.slots);
 
-    const emitsMatchEvent = (isMatch: boolean) => {
-      ctx.emit("matches", isMatch);
-    };
+      const emitsMatchEvent = (isMatch: boolean) => {
+        ctx.emit("matches", isMatch);
+      };
 
-    const highlightWordChunk = computed(() => {
-      if (
-        !props.query ||
-        (props.query instanceof String && !props.query.trim())
-      ) {
-        return targetText.value;
-      }
-
-      const pattern = createHighlightPattern({
+      const highlightWordChunk = getHighlightWordChunk(targetText, {
         query: props.query,
         splitBySpace: props.splitBySpace,
         caseSensitive: props.caseSensitive,
+        highlightTag: props.highlightTag,
+        highlightClass: props.highlightClass,
+        highlightStyle: props.highlightStyle,
       });
 
-      const words = targetText.value.split(pattern);
+      emitsMatchEvent(
+        Array.isArray(highlightWordChunk) && highlightWordChunk.length > 1
+      );
 
-      return words.map((w: string) => {
-        if (pattern.test(w)) {
-          return h(
-            props.highlightTag,
-            {
-              class: props.highlightClass,
-              style: props.highlightStyle,
-            },
-            w
-          );
-        }
-        return w;
-      });
-    });
-
-    watch(
-      () => props.query,
-      (to, from) => {
-        emitsMatchEvent(
-          Array.isArray(highlightWordChunk.value) &&
-            highlightWordChunk.value.length > 1
-        );
-      },
-      {
-        immediate: true,
-      }
-    );
-
-    return () =>
-      h(
+      return h(
         props.wrapperTag,
         {
           class: props.wrapperClass,
         },
-        highlightWordChunk.value
+        highlightWordChunk
       );
+    };
   },
 });
