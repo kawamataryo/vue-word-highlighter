@@ -1,7 +1,11 @@
-import { mount } from "@vue/test-utils1";
+import { mount, createLocalVue } from "@vue/test-utils1";
 import VueWordHighlighter from "../../vue-word-highlighter/src/components";
+import CompositionAPI from "@vue/composition-api";
 
 describe("VueWordHighlighter", () => {
+  const localVue = createLocalVue();
+  localVue.use(CompositionAPI);
+
   const createWrapper = (
     props: Record<string, unknown>,
     defaultSlot: string
@@ -11,6 +15,7 @@ describe("VueWordHighlighter", () => {
       slots: {
         default: defaultSlot,
       },
+      localVue,
     });
   };
 
