@@ -243,7 +243,7 @@ describe("VueWordHighlighter", () => {
   });
 
   describe("emits", () => {
-    describe("match", () => {
+    describe("matches", () => {
       it("should fire at change query", async () => {
         const textToHighlight =
           "Lorem Ipsum is simply dummy text of the printing and typesetting.";
@@ -254,18 +254,18 @@ describe("VueWordHighlighter", () => {
           textToHighlight
         );
         console.log(wrapper.emitted());
-        expect(wrapper.emitted().match.length).toBe(1);
-        expect(wrapper.emitted().match[0][0]).toBe(true);
+        expect(wrapper.emitted().matches.length).toBe(1);
+        expect(wrapper.emitted().matches[0][0]).toBe(true);
 
         await wrapper.setProps({ query: "hello world" });
 
-        expect(wrapper.emitted().match.length).toBe(2);
-        expect(wrapper.emitted().match[1][0]).toBe(false);
+        expect(wrapper.emitted().matches.length).toBe(2);
+        expect(wrapper.emitted().matches[1][0]).toBe(false);
 
         await wrapper.setProps({ query: "Lorem" });
 
-        expect(wrapper.emitted().match.length).toBe(3);
-        expect(wrapper.emitted().match[2][0]).toBe(true);
+        expect(wrapper.emitted().matches.length).toBe(3);
+        expect(wrapper.emitted().matches[2][0]).toBe(true);
       });
     });
   });

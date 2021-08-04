@@ -1,4 +1,4 @@
-<p><img width="400" alt="Vue Word highlighter" src="https://user-images.githubusercontent.com/11070996/127788684-906f7756-865f-44ae-b27a-2a80e3c7349b.png"></p>
+<p><img width="450" alt="Vue Word highlighter" src="https://user-images.githubusercontent.com/11070996/127788684-906f7756-865f-44ae-b27a-2a80e3c7349b.png"></p>
 
 [![CI](https://github.com/kawamataryo/vue-word-highlighter/actions/workflows/ci.yml/badge.svg)](https://github.com/kawamataryo/vue-word-highlighter/actions/workflows/ci.yml)
 <a href="https://npmcharts.com/compare/vue-word-highlighter?minimal=true"><img src="https://img.shields.io/npm/dt/vue-word-highlighter.svg" alt="Downloads"></a>
@@ -12,7 +12,7 @@ The word highlighter library for Vue 2.x & Vue 3.x.
 ### [CodeSandbox](https://codesandbox.io/s/vue3-word-highlighter-example-u2bhe)
 
 
-## Installation
+## 📦 Installation
 
 ### Vue 3.x
 ```bash
@@ -31,7 +31,7 @@ npm install vue-word-highlighter @vue/composition-api
 
 If you get a `Uncaught TypeError: e.defineComponent is not a function` error, and it doesn't work, try [this one](https://github.com/vueuse/vue-demi#manually-switch-versions) from vue-demi
 
-## Usage
+## 🚀 Usage
 To use it, just provide it with a search words to props and a body of text to default slots.
 
 
@@ -68,7 +68,8 @@ Output.
 
 ![](https://i.gyazo.com/ca4c1c6b76a47797cc5318ef6d01d6f2.png)
 
-## Props
+## ⚒ Details
+### Props
 
 | Property | Type | Required? | Description |
 |:---|:---|:---:|:---|
@@ -82,6 +83,49 @@ Output.
 | wrapperClass | String or Object or Array |  | Classes to be added to  wrap around whole tag. Similar to class bindings in vue, it accepts Array syntax, Object syntax, or class as String. |
 | textToHighlight | String |  | Text to highlight matches in. If this is not specified, the default slot value will be used for the search.  |
 
-## License
+### Emits
+
+| Property | Type |  Description |
+|:---|:---:|:---|
+| matches | Boolean | Returns True if the search string matches. |
+
+By using matches emit, we can find out from the parent component whether it is highlighted or not.
+
+<details>
+<summary>Example</summary>
+
+```vue
+<template>
+  <div>
+    <p v-if="hasMatchingWord">matches</p>
+    <p v-else>not</p>
+  </div>
+  <WordHighlighter query="vue" @matches="(e) => { hasMatchingWord = e }">
+    The word highlighter library for Vue 2.x Vue 3.x 💅
+  </WordHighlighter>
+</template>
+
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+import WordHighlighter from "vue-word-highlighter";
+
+export default defineComponent({
+  name: "App",
+  components: {
+    WordHighlighter,
+  },
+  setup() {
+    const hasMatchingWord = ref(false);
+    return {
+      hasMatchingWord
+    };
+  },
+});
+</script>
+```
+
+</details>
+
+## 📄 License
 
 vue-word-highlighter is available under the MIT License.

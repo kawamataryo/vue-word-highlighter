@@ -51,7 +51,7 @@ export default defineComponent({
       default: "",
     },
   },
-  emits: ["match"],
+  emits: ["matches"],
   setup(props, ctx) {
     const targetText = computed(() => {
       // If textToHighlight is exist, give priority to that.
@@ -62,7 +62,7 @@ export default defineComponent({
     });
 
     const emitsMatchEvent = (isMatch: boolean) => {
-      ctx.emit("match", isMatch);
+      ctx.emit("matches", isMatch);
     };
 
     const highlightWordChunk = computed(() => {

@@ -15,9 +15,9 @@
       :query="query"
       :split-by-space="splitBySpace"
       :case-sensitive="caseSensitive"
-      @match="
+      @matches="
         (e) => {
-          hasMatchWord = e;
+          hasMatchingWord = e;
         }
       "
       >{{ paragraph }}
@@ -63,11 +63,11 @@ export default defineComponent({
       return props.query.trim().split(/\s+/);
     });
 
-    const hasMatchWord = ref(false);
+    const hasMatchingWord = ref(false);
 
     return {
       searchWords,
-      hasMatchWord,
+      hasMatchingWord,
     };
   },
 });
