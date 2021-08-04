@@ -53,7 +53,7 @@ export default defineComponent({
     OutputBlock,
   },
   setup() {
-    const query = ref("lorem simply");
+    const query = ref("Latin literature");
     const paragraph = ref(DEFAULT_PARAGRAPH);
     const options = reactive({
       caseSensitive: false,
