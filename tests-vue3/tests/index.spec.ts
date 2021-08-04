@@ -253,7 +253,6 @@ describe("VueWordHighlighter", () => {
           },
           textToHighlight
         );
-        console.log(wrapper.emitted());
         expect(wrapper.emitted().matches.length).toBe(1);
         expect(wrapper.emitted().matches[0][0]).toBe(true);
 
