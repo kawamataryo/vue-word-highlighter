@@ -34,7 +34,7 @@ const createHighlightPattern = (options: {
   );
 };
 
-export const getHighlightWordChunk = (
+export const createHighlightWordChunk = (
   targetText: string,
   options: {
     query: string | RegExp;

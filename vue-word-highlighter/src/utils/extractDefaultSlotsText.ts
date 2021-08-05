@@ -2,7 +2,7 @@ import { isVue3 } from "vue-demi";
 
 type Slots = { default?: () => { children: string; text: string }[] };
 
-export const getDefaultSlotsText = (slots?: Slots): string => {
+export const extractDefaultSlotsText = (slots?: Slots): string => {
   if (slots && slots.default) {
     const defaultSlot = slots.default();
     let slotText;

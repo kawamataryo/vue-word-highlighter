@@ -1,7 +1,7 @@
 import { defineComponent, h, install, PropType } from "vue-demi";
-import { getDefaultSlotsText } from "../utils/getDefaultSlotsText";
-import { getHighlightWordChunk } from "../utils/getHighlightWordChunk";
-import { getMatchesFromWordChunk } from "../utils/getMatchesFromWordChunk";
+import { extractDefaultSlotsText } from "../utils/extractDefaultSlotsText";
+import { createHighlightWordChunk } from "../utils/createHighlightWordChunk";
+import { extractMatchesStrings } from "../utils/extractMatchesStrings";
 
 install();
 
@@ -51,9 +51,9 @@ export default defineComponent({
       // If textToHighlight is exist, give priority to that.
       const targetText = props.textToHighlight
         ? props.textToHighlight
-        : getDefaultSlotsText(ctx.slots);
+        : extractDefaultSlotsText(ctx.slots);
 
-      const highlightWordChunk = getHighlightWordChunk(targetText, {
+      const highlightWordChunk = createHighlightWordChunk(targetText, {
         query: props.query,
         splitBySpace: props.splitBySpace,
         caseSensitive: props.caseSensitive,
@@ -62,7 +62,7 @@ export default defineComponent({
         highlightStyle: props.highlightStyle,
       });
 
-      ctx.emit("matches", getMatchesFromWordChunk(highlightWordChunk));
+      ctx.emit("matches", extractMatchesStrings(highlightWordChunk));
 
       return h(
         props.wrapperTag,
