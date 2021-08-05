@@ -65,7 +65,7 @@
         2,
         "always",
         [
-          "feat", "fix", "docs", "style", "refactor", "test", "revert", "BREAKING CHANGE"
+          "feat", "fix", "docs", "style", "refactor", "test", "revert", "BREAKING CHANGE", "chore"
         ]
       ]
     }
