@@ -1,4 +1,5 @@
 {
+  "name": "vue-word-highlighter",
   "private": true,
   "workspaces": [
     "vue-word-highlighter",
@@ -17,7 +18,8 @@
     "build:example": "yarn workspace example run build",
     "dev:example": "yarn workspace example run dev",
     "test:v2": "vue-demi-switch 2 vue2 && yarn workspace tests-vue2 run test",
-    "test:v3": "vue-demi-switch 3 && yarn workspace tests-vue3 run test"
+    "test:v3": "vue-demi-switch 3 && yarn workspace tests-vue3 run test",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "vue-demi": "^0.11.2"
@@ -44,6 +46,7 @@
     "husky": "^7.0.0",
     "lint-staged": ">=10",
     "prettier": "2.3.2",
+    "semantic-release": "^17.4.4",
     "vue": "^3.0.0",
     "vue2": "npm:vue@2"
   },
@@ -57,5 +60,10 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "version": "0.0.0-development",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kawamataryo/text-highlight.git"
   }
 }

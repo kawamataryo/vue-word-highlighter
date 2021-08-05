@@ -11,7 +11,7 @@
   "author": "kawamataryo <ryo.kawamata0425@gmail.com>",
   "scripts": {
     "build": "rollup -c",
-    "release": "yarn build && npx bumpp --tag --commit --push && yarn publish"
+    "release": "yarn build && semantic-release"
   },
   "dependencies": {
     "vue-demi": "^0.11.2"
@@ -30,6 +30,18 @@
     "rollup-plugin-dts": "^3.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
-    "rollup-plugin-vue": "^6.0.0"
+    "rollup-plugin-vue": "^6.0.0",
+    "semantic-release": "^17.4.4"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github",
+      "@semantic-release/npm"
+    ],
+    "branches": [
+      "main"
+    ]
   }
 }
