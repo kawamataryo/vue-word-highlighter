@@ -250,7 +250,7 @@ describe("VueWordHighlighter", () => {
     describe("matches", () => {
       it("should fire at change query", async () => {
         const textToHighlight =
-          "Lorem Ipsum is simply dummy text of the printing and typesetting.";
+          "Lorem Ipsum is simply dummy text of the printing and typesetting. ipsum";
         const wrapper = createWrapper(
           {
             query: "dummy",
@@ -258,17 +258,17 @@ describe("VueWordHighlighter", () => {
           textToHighlight
         );
         expect(wrapper.emitted().matches!.length).toBe(1);
-        expect(wrapper.emitted().matches![0][0]).toBe(true);
+        expect(wrapper.emitted().matches![0][0]).toEqual(["dummy"]);
 
         await wrapper.setProps({ query: "hello world" });
 
         expect(wrapper.emitted().matches!.length).toBe(2);
-        expect(wrapper.emitted().matches![1][0]).toBe(false);
+        expect(wrapper.emitted().matches![1][0]).toEqual([]);
 
-        await wrapper.setProps({ query: "Lorem" });
+        await wrapper.setProps({ query: "ipsum" });
 
         expect(wrapper.emitted().matches!.length).toBe(3);
-        expect(wrapper.emitted().matches![2][0]).toBe(true);
+        expect(wrapper.emitted().matches![2][0]).toEqual(["Ipsum", "ipsum"]);
       });
     });
   });

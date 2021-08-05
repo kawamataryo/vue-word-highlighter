@@ -1,6 +1,7 @@
 import { defineComponent, h, install, PropType } from "vue-demi";
 import { getDefaultSlotsText } from "../utils/getDefaultSlotsText";
 import { getHighlightWordChunk } from "../utils/getHighlightWordChunk";
+import { getMatchesFromWordChunk } from "../utils/getMatchesFromWordChunk";
 
 install();
 
@@ -52,10 +53,6 @@ export default defineComponent({
         ? props.textToHighlight
         : getDefaultSlotsText(ctx.slots);
 
-      const emitsMatchEvent = (isMatch: boolean) => {
-        ctx.emit("matches", isMatch);
-      };
-
       const highlightWordChunk = getHighlightWordChunk(targetText, {
         query: props.query,
         splitBySpace: props.splitBySpace,
@@ -65,9 +62,7 @@ export default defineComponent({
         highlightStyle: props.highlightStyle,
       });
 
-      emitsMatchEvent(
-        Array.isArray(highlightWordChunk) && highlightWordChunk.length > 1
-      );
+      ctx.emit("matches", getMatchesFromWordChunk(highlightWordChunk));
 
       return h(
         props.wrapperTag,

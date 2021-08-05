@@ -6,7 +6,7 @@
 <a href="https://www.npmjs.com/package/vue-word-highlighter"><img src="https://img.shields.io/npm/l/vue-word-highlighter.svg" alt="License"></a>
 <a href="https://github.com/kawamataryo/vue-word-highlighter" target="__blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/kawamataryo/vue-word-highlighter?style=social"></a>
 
-The word highlighter library for Vue 2.x & Vue 3.x. 
+The word highlighter library for Vue 2.x & Vue 3.x.
 
 ### [Demo](https://kawamataryo.github.io/vue-word-highlighter/)
 ### [CodeSandbox](https://codesandbox.io/s/vue3-word-highlighter-example-u2bhe)
@@ -87,9 +87,9 @@ Output.
 
 | Property | Type |  Description |
 |:---|:---:|:---|
-| matches | Boolean | Returns True if the search string matches. |
+| matches | Array | Returns matches words. This event fires when mounted and when the query and highlighted to text are changed.|
 
-By using matches emit, we can find out from the parent component whether it is highlighted or not.
+By using matches emit, you can know from the parent component whether it is highlighted by VueWordHighlighter or not.
 
 <details>
 <summary>Example</summary>
@@ -97,10 +97,9 @@ By using matches emit, we can find out from the parent component whether it is h
 ```vue
 <template>
   <div>
-    <p v-if="hasMatchingWord">matches</p>
-    <p v-else>not</p>
+    Matched word count: {{ matches.length }}
   </div>
-  <WordHighlighter query="vue" @matches="(e) => { hasMatchingWord = e }">
+  <WordHighlighter query="vue" @matches="(e) => { matches = e }">
     The word highlighter library for Vue 2.x Vue 3.x 💅
   </WordHighlighter>
 </template>
@@ -115,9 +114,9 @@ export default defineComponent({
     WordHighlighter,
   },
   setup() {
-    const hasMatchingWord = ref(false);
+    const matches = ref([]);
     return {
-      hasMatchingWord
+      matches
     };
   },
 });

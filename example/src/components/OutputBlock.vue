@@ -9,6 +9,10 @@
       >{{ word }}</span
     >
   </div>
+  <label class="label">Matched word count</label>
+  <div class="is-size-6 mb-3 has-text-weight-bold">
+    {{ matchedWords.length }}
+  </div>
   <label class="label">Result</label>
   <div class="result-wrapper has-background-primary-light">
     <WordHighlighter
@@ -17,7 +21,7 @@
       :case-sensitive="caseSensitive"
       @matches="
         (e) => {
-          hasMatchingWord = e;
+          matchedWords = e;
         }
       "
       >{{ paragraph }}
@@ -63,11 +67,11 @@ export default defineComponent({
       return props.query.trim().split(/\s+/);
     });
 
-    const hasMatchingWord = ref(false);
+    const matchedWords = ref([]);
 
     return {
       searchWords,
-      hasMatchingWord,
+      matchedWords,
     };
   },
 });
