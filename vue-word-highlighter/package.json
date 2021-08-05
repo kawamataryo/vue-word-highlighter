@@ -41,7 +41,7 @@
       "@semantic-release/npm"
     ],
     "branches": [
-      "main"
+      "release"
     ]
   }
 }
