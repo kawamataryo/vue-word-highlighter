@@ -1,5 +1,35 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    ":timezone(Asia/Tokyo)"
+  ],
+  "labels": ["dependencies", "renovate"],
+  "dependencyDashboard": true,
+  "pin": {
+    "automerge": true
+  },
+  "packageRules": [
+    {
+      "packagePatterns": ["^@types/"],
+      "automerge": true,
+      "major": {
+        "automerge": false
+      }
+    },
+    {
+      "groupName": "jest",
+      "automerge": true,
+      "sourceUrlPrefixes": [
+        "https://github.com/facebook/jest",
+        "https://github.com/kulshekhar/ts-jest"
+      ]
+    },
+    {
+      "groupName": "linters",
+      "automerge": true,
+      "extends": ["packages:linters"],
+      "packageNames": ["prettier"],
+      "packagePatterns": ["^@typescript-eslint/"]
+    }
   ]
 }
