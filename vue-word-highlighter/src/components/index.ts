@@ -11,6 +11,7 @@ export default defineComponent({
     query: {
       type: [String, Object as () => RegExp],
       required: true,
+      default: "",
     },
     caseSensitive: {
       type: Boolean,
