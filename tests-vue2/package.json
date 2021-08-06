@@ -10,7 +10,7 @@
     "@types/node": "16.4.8",
     "@vue/composition-api": "1.0.5",
     "@vue/test-utils1": "npm:@vue/test-utils@1.2.2",
-    "jest": "^27.0.6",
+    "jest": "27.0.6",
     "ts-jest": "27.0.4",
     "typescript": "4.3.5",
     "vue": "2.6.14",
