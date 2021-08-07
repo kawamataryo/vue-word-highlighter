@@ -1,4 +1,3 @@
-// @ts-expect-error: TODO
 import { mount } from "@vue/test-utils";
 import VueWordHighlighter from "../../vue-word-highlighter/src/components";
 
@@ -254,18 +253,21 @@ describe("VueWordHighlighter", () => {
           textToHighlight
         );
 
-        expect(wrapper.emitted().matches.length).toBe(1);
-        expect(wrapper.emitted().matches[0][0]).toEqual(["dummy"]);
+        expect(wrapper.emitted<[][]>().matches.length).toBe(1);
+        expect(wrapper.emitted<[][]>().matches[0][0]).toEqual(["dummy"]);
 
         await wrapper.setProps({ query: "hello world" });
 
-        expect(wrapper.emitted().matches.length).toBe(2);
-        expect(wrapper.emitted().matches[1][0]).toEqual([]);
+        expect(wrapper.emitted<[][]>().matches.length).toBe(2);
+        expect(wrapper.emitted<[][]>().matches[1][0]).toEqual([]);
 
         await wrapper.setProps({ query: "ipsum" });
 
-        expect(wrapper.emitted().matches.length).toBe(3);
-        expect(wrapper.emitted().matches[2][0]).toEqual(["Ipsum", "ipsum"]);
+        expect(wrapper.emitted<[][]>().matches.length).toBe(3);
+        expect(wrapper.emitted<[][]>().matches[2][0]).toEqual([
+          "Ipsum",
+          "ipsum",
+        ]);
       });
     });
   });
