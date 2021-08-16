@@ -18,6 +18,6 @@
     "bulma-extensions": "6.2.7",
     "sass": "1.37.5",
     "typescript": "4.3.5",
-    "vite": "2.4.4"
+    "vite": "2.5.0"
   }
 }
