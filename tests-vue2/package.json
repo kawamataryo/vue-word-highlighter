@@ -12,7 +12,7 @@
     "@vue/test-utils1": "npm:@vue/test-utils@1.2.2",
     "jest": "27.0.6",
     "ts-jest": "27.0.5",
-    "typescript": "4.3.5",
+    "typescript": "4.4.2",
     "vue-demi": "0.11.2",
     "vue-jest": "3.0.7",
     "babel-core": "6.26.3",
