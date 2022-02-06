@@ -36,7 +36,7 @@
   "devDependencies": {
     "@commitlint/cli": "14.1.0",
     "@commitlint/config-conventional": "14.1.0",
-    "@types/node": "16.11.17",
+    "@types/node": "16.11.22",
     "@typescript-eslint/eslint-plugin": "5.8.0",
     "@typescript-eslint/parser": "5.8.0",
     "@vue/composition-api": "1.4.2",
