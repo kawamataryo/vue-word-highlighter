@@ -40,7 +40,7 @@ jobs:
         run: yarn run test:v3
 
       - name: Install vue2
-        run: yarn add vue -W
+        run: yarn add vue@2.6.14 -W
 
       - name: Run Jest vue2
         run: yarn run test:v2
