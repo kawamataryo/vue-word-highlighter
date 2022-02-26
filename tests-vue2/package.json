@@ -8,7 +8,7 @@
   "devDependencies": {
     "@types/jest": "27.4.1",
     "@types/node": "16.11.26",
-    "@vue/composition-api": "1.4.7",
+    "@vue/composition-api": "1.4.9",
     "@vue/test-utils1": "npm:@vue/test-utils@1.2.2",
     "jest": "27.4.5",
     "ts-jest": "27.1.2",
