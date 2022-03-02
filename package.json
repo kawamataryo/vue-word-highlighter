@@ -41,7 +41,7 @@
     "@typescript-eslint/parser": "5.13.0",
     "@vue/composition-api": "1.4.9",
     "eslint": "8.10.0",
-    "eslint-config-prettier": "8.4.0",
+    "eslint-config-prettier": "8.5.0",
     "eslint-plugin-vue": "8.5.0",
     "husky": "7.0.4",
     "lint-staged": "12.3.4",
