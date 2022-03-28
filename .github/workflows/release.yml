@@ -20,7 +20,7 @@ jobs:
           node-version: '14'
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: yarn-cache
         with:
           path: |
