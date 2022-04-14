@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "@types/jest": "27.4.1",
-    "@types/node": "16.11.26",
+    "@types/node": "16.11.27",
     "@vue/compiler-sfc": "3.1.5",
     "@vue/test-utils": "2.0.0-rc.20",
     "jest": "27.4.5",
