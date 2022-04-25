@@ -39,7 +39,7 @@
     "@types/node": "16.11.28",
     "@typescript-eslint/eslint-plugin": "5.20.0",
     "@typescript-eslint/parser": "5.20.0",
-    "@vue/composition-api": "1.4.9",
+    "@vue/composition-api": "1.5.0",
     "eslint": "8.14.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-vue": "8.7.1",
