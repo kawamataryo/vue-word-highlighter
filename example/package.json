@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@types/node": "16.11.33",
-    "@vitejs/plugin-vue": "2.3.1",
+    "@vitejs/plugin-vue": "2.3.2",
     "@vue/compiler-sfc": "3.1.5",
     "bulma": "0.9.3",
     "bulma-extensions": "6.2.7",
