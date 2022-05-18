@@ -42,7 +42,7 @@
     "@vue/composition-api": "1.6.1",
     "eslint": "8.15.0",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-vue": "9.0.0",
+    "eslint-plugin-vue": "9.0.1",
     "husky": "8.0.1",
     "lint-staged": "12.4.1",
     "prettier": "2.6.2",
