@@ -7749,10 +7749,10 @@ vite@2.9.9:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vue-demi@0.12.0, vue-demi@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.12.0.tgz#b202a01cdfc635443e41faea697d624caac0fa73"
-  integrity sha512-eggsbQSQEJKlvQrtrJLx4J44MIVq5+Z7QetIEh1Na+ZWLgt5Fq0qskQ1QmckTTEoFcUdn36c4K23EjtXZhws7w==
+vue-demi@0.13.0, vue-demi@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.0.tgz#76c64a8987460fc242bf900afe8d3afc0c600d24"
+  integrity sha512-pu9R4Nydj+LMcKkIL1cnP1L2anJBTmVZzVWSdy5P1rkSRs9fxGCFrZmXdPTEsN37m5JtBVBSYKPk6xnORfjUsQ==
 
 vue-demi@^0.11.2:
   version "0.11.2"
