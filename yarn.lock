@@ -7760,15 +7760,20 @@ vite@2.9.13:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vue-demi@0.13.0, vue-demi@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.0.tgz#76c64a8987460fc242bf900afe8d3afc0c600d24"
-  integrity sha512-pu9R4Nydj+LMcKkIL1cnP1L2anJBTmVZzVWSdy5P1rkSRs9fxGCFrZmXdPTEsN37m5JtBVBSYKPk6xnORfjUsQ==
+vue-demi@0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.1.tgz#7604904c88be338418a10abbc94d5b8caa14cb8c"
+  integrity sha512-xmkJ56koG3ptpLnpgmIzk9/4nFf4CqduSJbUM0OdPoU87NwRuZ6x49OLhjSa/fC15fV+5CbEnrxU4oyE022svg==
 
 vue-demi@^0.11.2:
   version "0.11.2"
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.11.2.tgz#faa06da53887c493a695b997f4fcb4784a667990"
   integrity sha512-J+X8Au6BhQdcej6LY4O986634hZLu55L0ewU2j8my7WIKlu8cK0dqmdUxqVHHMd/cMrKKZ9SywB/id6aLhwCtA==
+
+vue-demi@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.0.tgz#76c64a8987460fc242bf900afe8d3afc0c600d24"
+  integrity sha512-pu9R4Nydj+LMcKkIL1cnP1L2anJBTmVZzVWSdy5P1rkSRs9fxGCFrZmXdPTEsN37m5JtBVBSYKPk6xnORfjUsQ==
 
 vue-eslint-parser@^9.0.1:
   version "9.0.2"
