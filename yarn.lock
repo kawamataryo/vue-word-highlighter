@@ -8125,11 +8125,6 @@ vite@2.9.13:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vue-demi@0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.0.tgz#76c64a8987460fc242bf900afe8d3afc0c600d24"
-  integrity sha512-pu9R4Nydj+LMcKkIL1cnP1L2anJBTmVZzVWSdy5P1rkSRs9fxGCFrZmXdPTEsN37m5JtBVBSYKPk6xnORfjUsQ==
-
 vue-demi@0.13.1:
   version "0.13.1"
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.13.1.tgz#7604904c88be338418a10abbc94d5b8caa14cb8c"
