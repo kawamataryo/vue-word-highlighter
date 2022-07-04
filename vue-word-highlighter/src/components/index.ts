@@ -22,11 +22,15 @@ export default defineComponent({
       default: false,
     },
     highlightClass: {
-      type: [Object, String, Array],
+      type: [Object, String, Array] as PropType<
+        Record<string, boolean> | string | string[]
+      >,
       default: "",
     },
     highlightStyle: {
-      type: [Object, String, Array],
+      type: [Object, String, Array] as PropType<
+        Record<string, boolean> | string | string[]
+      >,
       default: "",
     },
     highlightTag: {
