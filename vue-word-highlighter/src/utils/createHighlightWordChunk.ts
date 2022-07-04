@@ -41,8 +41,8 @@ export const createHighlightWordChunk = (
     splitBySpace: boolean;
     caseSensitive: boolean;
     highlightTag: string;
-    highlightClass: string;
-    highlightStyle: string;
+    highlightClass: Record<string, boolean> | string | string[];
+    highlightStyle: Record<string, boolean> | string | string[];
   }
 ) => {
   if (

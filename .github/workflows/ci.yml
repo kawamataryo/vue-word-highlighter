@@ -7,17 +7,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: yarn-cache
         with:
           path: |
@@ -34,13 +34,13 @@ jobs:
         run: yarn run lint
 
       - name: Install vue3
-        run: yarn add vue@next -W
+        run: yarn add vue -W
 
       - name: Run Jest vue3
         run: yarn run test:v3
 
       - name: Install vue2
-        run: yarn add vue -W
+        run: yarn add vue@2.7.1 -W
 
       - name: Run Jest vue2
         run: yarn run test:v2

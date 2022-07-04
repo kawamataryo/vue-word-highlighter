@@ -8,6 +8,7 @@
   "pin": {
     "automerge": true
   },
+  "automerge": true,
   "packageRules": [
     {
       "packagePatterns": ["^@types/"],
@@ -26,7 +27,6 @@
     },
     {
       "groupName": "linters",
-      "automerge": true,
       "extends": ["packages:linters"],
       "packageNames": ["prettier"],
       "packagePatterns": ["^@typescript-eslint/"]

@@ -6,7 +6,7 @@ describe("VueWordHighlighter", () => {
     props: Record<string, unknown>,
     defaultSlot: string
   ) => {
-    return mount(VueWordHighlighter, {
+    return mount(VueWordHighlighter as any, {
       propsData: props,
       slots: {
         default: defaultSlot,
