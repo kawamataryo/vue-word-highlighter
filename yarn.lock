@@ -2124,6 +2124,19 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
+babel-jest@28.1.2:
+  version "28.1.2"
+  resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-28.1.2.tgz#2b37fb81439f14d34d8b2cc4a4bd7efabf9acbfe"
+  integrity sha512-pfmoo6sh4L/+5/G2OOfQrGJgvH7fTa1oChnuYH2G/6gA+JwDvO8PELwvwnofKBMNrQsam0Wy/Rw+QSrBNewq2Q==
+  dependencies:
+    "@jest/transform" "^28.1.2"
+    "@types/babel__core" "^7.1.14"
+    babel-plugin-istanbul "^6.1.1"
+    babel-preset-jest "^28.1.1"
+    chalk "^4.0.0"
+    graceful-fs "^4.2.9"
+    slash "^3.0.0"
+
 babel-jest@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-27.5.1.tgz#a1bf8d61928edfefd21da27eb86a695bfd691444"
@@ -2134,19 +2147,6 @@ babel-jest@^27.5.1:
     "@types/babel__core" "^7.1.14"
     babel-plugin-istanbul "^6.1.1"
     babel-preset-jest "^27.5.1"
-    chalk "^4.0.0"
-    graceful-fs "^4.2.9"
-    slash "^3.0.0"
-
-babel-jest@^28.1.2:
-  version "28.1.2"
-  resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-28.1.2.tgz#2b37fb81439f14d34d8b2cc4a4bd7efabf9acbfe"
-  integrity sha512-pfmoo6sh4L/+5/G2OOfQrGJgvH7fTa1oChnuYH2G/6gA+JwDvO8PELwvwnofKBMNrQsam0Wy/Rw+QSrBNewq2Q==
-  dependencies:
-    "@jest/transform" "^28.1.2"
-    "@types/babel__core" "^7.1.14"
-    babel-plugin-istanbul "^6.1.1"
-    babel-preset-jest "^28.1.1"
     chalk "^4.0.0"
     graceful-fs "^4.2.9"
     slash "^3.0.0"
