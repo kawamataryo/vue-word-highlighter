@@ -26,7 +26,7 @@ We accept contributions via Pull Requests on [Github](https://github.com/kawamat
 
 ``` bash
 # Vue2
-$ yarn add vue@2.6.14 -W && yarn test:v2
+$ yarn add vue@2 -W && yarn test:v2
 # Vue3
 $ yarn add vue -W && yarn test:v3
 ```
