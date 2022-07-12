@@ -14,7 +14,7 @@
     "release": "yarn build && semantic-release"
   },
   "dependencies": {
-    "vue-demi": "0.13.2"
+    "vue-demi": "0.13.4"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",
