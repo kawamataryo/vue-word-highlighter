@@ -46,7 +46,7 @@
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
     "prettier": "2.7.1",
-    "semantic-release": "19.0.3",
+    "semantic-release": "19.0.4",
     "vue": "3.2.37",
     "vue2": "npm:vue@2.7.9"
   },
