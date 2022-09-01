@@ -16,7 +16,7 @@
     "@vue/compiler-sfc": "3.2.38",
     "bulma": "0.9.4",
     "bulma-extensions": "6.2.7",
-    "sass": "1.54.7",
+    "sass": "1.54.8",
     "typescript": "4.8.2",
     "vite": "3.0.9"
   }
