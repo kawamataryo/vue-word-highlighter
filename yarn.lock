@@ -3496,10 +3496,10 @@ eslint-config-prettier@8.5.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.5.0.tgz#5a81680ec934beca02c7b1a61cf8ca34b66feab1"
   integrity sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==
 
-eslint-plugin-vue@9.4.0:
-  version "9.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-9.4.0.tgz#31c2d9002b5bb437b351a5feffdf37c4397e5cb9"
-  integrity sha512-Nzz2QIJ8FG+rtJaqT/7/ru5ie2XgT9KCudkbN0y3uFYhQ41nuHEaboLAiqwMcK006hZPQv/rVMRhUIwEGhIvfQ==
+eslint-plugin-vue@9.5.0:
+  version "9.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-9.5.0.tgz#bbfea787cee8d57d6418d0425c5daa00d044f530"
+  integrity sha512-Dm4KJRD6yFZGy6OhtgcG35oMR9rAhGfP6vbANw2k5wvQn9YjKu9huRV3Y63pYUbqPTHJ3V4v5+EcGmJSSjWgSA==
   dependencies:
     eslint-utils "^3.0.0"
     natural-compare "^1.4.0"
