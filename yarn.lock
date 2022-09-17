@@ -1813,7 +1813,7 @@
   resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.0.2.tgz#0b5edd683366153d5bc5a91edc62f292118710eb"
   integrity sha512-E2P4oXSaWDqTZNbmKZFVLrNN/siVN78YkEqs7pHryWerrlZR9bBFLWdJwRoguX45Ru6HxIflzKl4vQvwRMwm5g==
 
-"@vue/vue3-jest@^29.1.0":
+"@vue/vue3-jest@29.1.0":
   version "29.1.0"
   resolved "https://registry.yarnpkg.com/@vue/vue3-jest/-/vue3-jest-29.1.0.tgz#cccda0b5a12199246baa8a0a127987401e5e418e"
   integrity sha512-Qc8TNyUUn6Xpbvyqp9eu8dA2WMVlwDFOLjtPQXq+lAck6aydd2/AtIXHn+Aiz4F4iBLS5OJfZ2XFAYeH+BBNag==
@@ -8246,18 +8246,6 @@ vue-word-highlighter@^0.1.13:
   dependencies:
     "@vue/compiler-sfc" "2.7.10"
     csstype "^3.1.0"
-
-vue3-jest@^27.0.0-alpha.1:
-  version "27.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/vue3-jest/-/vue3-jest-27.0.0-alpha.1.tgz#ccc9ecd963a8ab54e43fbb4cad3c1d14c84c0613"
-  integrity sha512-F/pSFbpLcYVIv0ogNMFwT+W+r9tCRfLw84IIqqyocD1FZaW6m3RpfqwQsOXgYJVXFSdj4t3xbgj967s8WMrZjQ==
-  dependencies:
-    "@babel/plugin-transform-modules-commonjs" "^7.2.0"
-    chalk "^2.1.0"
-    convert-source-map "^1.6.0"
-    extract-from-css "^0.4.4"
-    source-map "0.5.6"
-    tsconfig "^7.0.0"
 
 vue@3.2.39:
   version "3.2.39"
