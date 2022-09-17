@@ -22,7 +22,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "vue-demi": "^0.13.1"
+    "vue-demi": "0.13.11"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",
@@ -34,21 +34,21 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "17.0.3",
-    "@commitlint/config-conventional": "17.0.3",
-    "@types/node": "16.11.43",
-    "@typescript-eslint/eslint-plugin": "5.30.4",
-    "@typescript-eslint/parser": "5.30.4",
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-conventional": "17.1.0",
+    "@types/node": "16.11.59",
+    "@typescript-eslint/eslint-plugin": "5.37.0",
+    "@typescript-eslint/parser": "5.37.0",
     "@vue/composition-api": "1.7.0",
-    "eslint": "8.19.0",
+    "eslint": "8.23.1",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-vue": "9.1.1",
+    "eslint-plugin-vue": "9.5.1",
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
     "prettier": "2.7.1",
-    "semantic-release": "19.0.3",
-    "vue": "3.2.37",
-    "vue2": "npm:vue@2.7.1"
+    "semantic-release": "19.0.5",
+    "vue": "3.2.39",
+    "vue2": "npm:vue@2.7.10"
   },
   "lint-staged": {
     "{vue-word-highlighter,example,tests-vue3,tests-vue2}/**/*.{js,ts,vue}": [
