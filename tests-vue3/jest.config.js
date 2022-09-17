@@ -3,7 +3,7 @@ module.exports = {
   globals: {},
   testEnvironment: "jsdom",
   transform: {
-    "^.+\\.vue$": "vue-jest",
+    "^.+\\.vue$": "@vue/vue3-jest",
     "^.+\\.tsx?$": "ts-jest",
   },
   moduleFileExtensions: ["vue", "js", "json", "jsx", "ts", "tsx", "node"],

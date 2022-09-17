@@ -1,12 +1,13 @@
 import { mount } from "@vue/test-utils";
 import VueWordHighlighter from "../../vue-word-highlighter/src/components";
+import WrappedWordHighlighter from "./fixtures/WrappedWordHighlighter.vue";
 
 describe("VueWordHighlighter", () => {
   const createWrapper = (
     props: Record<string, unknown>,
     defaultSlot: string
   ) => {
-    return mount(VueWordHighlighter as any, {
+    return mount(VueWordHighlighter, {
       propsData: props,
       slots: {
         default: defaultSlot,
@@ -270,5 +271,28 @@ describe("VueWordHighlighter", () => {
         ]);
       });
     });
+  });
+});
+
+describe("VueWordHighlighter if wrapped", () => {
+  const createWrapper = (
+    props: Record<string, unknown>,
+    defaultSlot: string
+  ) => {
+    return mount(WrappedWordHighlighter, {
+      propsData: props,
+      slots: {
+        default: defaultSlot,
+      },
+    });
+  };
+
+  it("should highlight word with wrapped component", () => {
+    const wrapper = createWrapper({ query: "actor" }, "He are actor");
+
+    const highlightWords = wrapper.findAll("mark");
+
+    expect(highlightWords.length).toBe(1);
+    expect(highlightWords[0].text()).toBe("actor");
   });
 });
