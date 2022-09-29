@@ -6,7 +6,7 @@
     "test": "jest ./tests"
   },
   "devDependencies": {
-    "@types/jest": "29.0.3",
+    "@types/jest": "29.1.0",
     "@types/node": "16.11.62",
     "@vue/compiler-sfc": "3.2.40",
     "@vue/test-utils": "2.0.2",
