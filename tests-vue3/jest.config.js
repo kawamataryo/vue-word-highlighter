@@ -6,5 +6,8 @@ module.exports = {
     "^.+\\.vue$": "@vue/vue3-jest",
     "^.+\\.tsx?$": "ts-jest",
   },
+  testEnvironmentOptions: {
+    customExportConditions: ["node", "node-addons"],
+  },
   moduleFileExtensions: ["vue", "js", "json", "jsx", "ts", "tsx", "node"],
 };
