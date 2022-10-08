@@ -19,6 +19,7 @@
       :query="query"
       :split-by-space="splitBySpace"
       :case-sensitive="caseSensitive"
+      :diacritics-sensitive="diacriticsSensitive"
       @matches="
         (e) => {
           matchedWords = e;
@@ -48,6 +49,10 @@ export default defineComponent({
       required: true,
     },
     caseSensitive: {
+      type: Boolean,
+      required: true,
+    },
+    diacriticsSensitive: {
       type: Boolean,
       required: true,
     },

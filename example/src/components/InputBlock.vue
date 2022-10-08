@@ -16,6 +16,16 @@
   <div class="field is-grouped is-grouped-multiline">
     <div class="control">
       <input
+        id="options-split-by-space"
+        :checked="splitBySpace"
+        class="is-checkradio is-primary"
+        type="checkbox"
+        @change="onChange('splitBySpace', $event)"
+      />
+      <label for="options-split-by-space">Split by space</label>
+    </div>
+    <div class="control">
+      <input
         id="options-case-sensitive"
         class="is-checkradio is-primary"
         :checked="caseSensitive"
@@ -26,13 +36,13 @@
     </div>
     <div class="control">
       <input
-        id="options-split-by-space"
-        :checked="splitBySpace"
+        id="options-diacritics-sensitive"
         class="is-checkradio is-primary"
+        :checked="diacriticsSensitive"
         type="checkbox"
-        @change="onChange('splitBySpace', $event)"
+        @change="onChange('diacriticsSensitive', $event)"
       />
-      <label for="options-split-by-space">Split by space</label>
+      <label for="options-diacritics-sensitive">Diacritics sensitive</label>
     </div>
   </div>
   <div class="field is-hidden-mobile">
@@ -50,7 +60,12 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-type EmitName = "query" | "paragraph" | "caseSensitive" | "splitBySpace";
+type EmitName =
+  | "query"
+  | "paragraph"
+  | "caseSensitive"
+  | "splitBySpace"
+  | "diacriticsSensitive";
 
 export default defineComponent({
   name: "InputBlock",
@@ -67,6 +82,10 @@ export default defineComponent({
       type: Boolean,
       required: true,
     },
+    diacriticsSensitive: {
+      type: Boolean,
+      required: true,
+    },
     splitBySpace: {
       type: Boolean,
       required: true,
@@ -77,6 +96,7 @@ export default defineComponent({
     "update:paragraph",
     "update:caseSensitive",
     "update:splitBySpace",
+    "update:diacriticsSensitive",
   ],
   setup(_, ctx) {
     const onChange = (name: EmitName, e: { target: HTMLInputElement }) => {

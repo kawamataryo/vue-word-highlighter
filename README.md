@@ -74,7 +74,8 @@ Output.
 | Property | Type | Required? | Description |
 |:---|:---|:---:|:---|
 | query | String or RegExp | ✓ | Search words. Can be use string or regular expressions. |
-| caseSensitive | Boolean |  | Search should be case sensitive. defaults to `false`. |
+| caseSensitive | Boolean |  | Whether string being searched is case sensitive. defaults to `false`. |
+| diacriticsSensitive | Boolean |  | Whether string being searched is diacritics sensitive. defaults to `false`. |
 | splitBySpace | Boolean |  | Whether split the string with spaces to make it a search string. If false, the string is being searched as a whole word. defaults to `false`. When the query is set to a RegExp, the value of splitBySpace will be set to false.  |
 | highlightTag | String |  | Type of tag to wrap around highlighted matches; defaults to `mark`. |
 | highlightClass | String or Object or Array |  | Classes to be added to highlighted tag. Similar to class bindings in vue, it accepts Array syntax, Object syntax, or class as String.|

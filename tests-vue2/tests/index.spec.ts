@@ -62,6 +62,40 @@ describe("VueWordHighlighter", () => {
     });
   });
 
+  describe("diacriticsSensitive", () => {
+    describe("true", () => {
+      it("should highlight word", () => {
+        const wrapper = createWrapper(
+          { query: "Internationalizati0n", diacriticsSensitive: true },
+          "Iлｔèｒｎåｔïｏｎɑｌíƶａｔï߀ԉ"
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(0);
+      });
+    });
+
+    describe("false", () => {
+      it("should highlight word", () => {
+        const wrapper = createWrapper(
+          {
+            query: "Internationalizati0n",
+            diacriticsSensitive: false,
+          },
+          "aaa Iлｔèｒｎåｔïｏｎɑｌíƶａｔï߀ԉ"
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(1);
+        expect(highlightWords.at(0).text()).toBe(
+          "Iлｔèｒｎåｔïｏｎɑｌíƶａｔï߀ԉ"
+        );
+      });
+    });
+  });
+
   describe("splitBySpace", () => {
     describe("true", () => {
       it("should highlight word", () => {
