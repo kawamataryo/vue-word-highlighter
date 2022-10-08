@@ -3,19 +3,17 @@
   "version": "0.1.13",
   "private": true,
   "scripts": {
-    "test": "jest ./tests"
+    "test:watch": "vitest watch",
+    "test": "vitest run"
   },
   "devDependencies": {
-    "@types/jest": "29.1.2",
     "@types/node": "16.11.64",
+    "@vitejs/plugin-vue": "^3.1.2",
     "@vue/compiler-sfc": "3.2.40",
     "@vue/test-utils": "2.1.0",
-    "@vue/vue3-jest": "29.1.1",
-    "babel-jest": "29.1.2",
-    "jest": "29.1.2",
-    "jest-environment-jsdom": "29.1.2",
-    "ts-jest": "29.0.3",
+    "jsdom": "20.0.1",
     "typescript": "4.8.4",
+    "vitest": "0.24.0",
     "vue": "3.2.40",
     "vue-demi": "0.13.11"
   }
