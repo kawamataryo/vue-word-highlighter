@@ -17,6 +17,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    diacriticsSensitive: {
+      type: Boolean,
+      default: false,
+    },
     splitBySpace: {
       type: Boolean,
       default: false,
@@ -62,6 +66,7 @@ export default defineComponent({
         query: props.query,
         splitBySpace: props.splitBySpace,
         caseSensitive: props.caseSensitive,
+        diacriticsSensitive: props.diacriticsSensitive,
         highlightTag: props.highlightTag,
         highlightClass: props.highlightClass,
         highlightStyle: props.highlightStyle,

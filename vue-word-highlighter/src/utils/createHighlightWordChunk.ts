@@ -1,4 +1,6 @@
 import { h } from "vue-demi";
+import diacritics from "diacritics";
+import { getRowWordList } from "./getRowWordList";
 
 const escapeRegExp = (text: string) => {
   return text.replace(/[-\\^$*+?.()|[\]{}]/g, "\\$&");
@@ -40,6 +42,7 @@ export const createHighlightWordChunk = (
     query: string | RegExp;
     splitBySpace: boolean;
     caseSensitive: boolean;
+    diacriticsSensitive: boolean;
     highlightTag: string;
     highlightClass: Record<string, boolean> | string | string[];
     highlightStyle: Record<string, boolean> | string | string[];
@@ -52,15 +55,33 @@ export const createHighlightWordChunk = (
     return targetText;
   }
 
+  let innerTargetText = targetText;
+  let innerQuery = options.query;
+  let hasDiacritics = false;
+
+  if (!options.diacriticsSensitive) {
+    innerTargetText = diacritics.remove(innerTargetText);
+    innerQuery =
+      options.query instanceof RegExp
+        ? options.query
+        : diacritics.remove(options.query);
+    hasDiacritics = innerTargetText !== targetText;
+  }
+
   const pattern = createHighlightPattern({
-    query: options.query,
+    query: innerQuery,
     splitBySpace: options.splitBySpace,
     caseSensitive: options.caseSensitive,
   });
 
-  const words = targetText.split(pattern);
+  const wordList = innerTargetText.split(pattern);
 
-  return words.map((w: string) => {
+  // Make a list restoring the original string because diacritics may have been converted
+  const restoredWordList = hasDiacritics
+    ? getRowWordList(targetText, wordList)
+    : wordList;
+
+  return wordList.map((w: string, i: number) => {
     if (pattern.test(w)) {
       return h(
         options.highlightTag,
@@ -68,9 +89,9 @@ export const createHighlightWordChunk = (
           class: options.highlightClass,
           style: options.highlightStyle,
         },
-        w
+        restoredWordList[i]
       );
     }
-    return w;
+    return restoredWordList[i];
   });
 };
