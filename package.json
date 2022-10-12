@@ -48,7 +48,7 @@
     "prettier": "2.7.1",
     "semantic-release": "19.0.5",
     "vue": "3.2.40",
-    "vue2": "npm:vue@2.7.11"
+    "vue2": "npm:vue@2.7.12"
   },
   "lint-staged": {
     "{vue-word-highlighter,example,tests-vue3,tests-vue2}/**/*.{js,ts,vue}": [
