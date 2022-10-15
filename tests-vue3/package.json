@@ -7,7 +7,7 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "@types/node": "16.11.65",
+    "@types/node": "16.11.66",
     "@vitejs/plugin-vue": "3.1.2",
     "@vue/compiler-sfc": "3.2.41",
     "@vue/test-utils": "2.1.0",
