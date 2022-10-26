@@ -7,7 +7,7 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@types/node": "18.11.5",
+    "@types/node": "18.11.6",
     "@vitejs/plugin-vue": "3.1.2",
     "@vitejs/plugin-vue2": "2.0.0",
     "@vue/composition-api": "1.7.1",
