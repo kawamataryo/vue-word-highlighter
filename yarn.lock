@@ -1002,10 +1002,10 @@
     lodash "^4.17.15"
     pretty "^2.0.0"
 
-"@vue/test-utils@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.2.0.tgz#3d8fc020802db9b726e2d91b6e3fb5b21aa0bf0c"
-  integrity sha512-EKp5/N7ieNZdoLTkD16j/irUjIEDN63QUIc41vLUMqGvSsTQN0QxbFiQqh5v49RPfS5vZH+DhjNUEkijCMOCSg==
+"@vue/test-utils@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.2.1.tgz#c16061e081e0f1d3d5a126b79ae93d2abb6d2c17"
+  integrity sha512-AkLt24wnnxedJ3NX090JYiueog184QqlR5TVNZM+lggCrK8XjeuPr274okaLqDmiRgp4XVCaGa07KqKLGQbsMQ==
 
 JSONStream@^1.0.4:
   version "1.3.5"
