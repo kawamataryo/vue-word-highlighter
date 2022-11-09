@@ -880,10 +880,10 @@
     "@typescript-eslint/types" "5.42.1"
     eslint-visitor-keys "^3.3.0"
 
-"@vitejs/plugin-vue2@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue2/-/plugin-vue2-2.0.0.tgz#f7477daa494e5cd2ec3566bcadd601f5d6ec43bc"
-  integrity sha512-VJOCDtBNcRv7kYLQRbbERDP0OqW0EKgMQp6wwbqZRpU3kg38OP891avx6Xl3szntGkf9mK4i8k3TjsAlmkzWFg==
+"@vitejs/plugin-vue2@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue2/-/plugin-vue2-2.0.1.tgz#e92af64fa91071890009a6c0dd65c62223ac2679"
+  integrity sha512-4eFAypstsQoiR9NLZXJ6K3ZWmU2CMFNxGTjGfRdmimImXJe4eHVfMMizaOjfX6Y8HfFJ7u+L8oUg32MInAHZ+g==
 
 "@vitejs/plugin-vue@3.2.0":
   version "3.2.0"
