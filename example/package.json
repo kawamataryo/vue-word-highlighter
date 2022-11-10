@@ -8,12 +8,12 @@
   },
   "dependencies": {
     "vue-demi": "0.13.11",
-    "vue": "3.2.43"
+    "vue": "3.2.44"
   },
   "devDependencies": {
     "@types/node": "18.11.9",
     "@vitejs/plugin-vue": "3.2.0",
-    "@vue/compiler-sfc": "3.2.43",
+    "@vue/compiler-sfc": "3.2.44",
     "bulma": "0.9.4",
     "bulma-extensions": "6.2.7",
     "sass": "1.56.1",
