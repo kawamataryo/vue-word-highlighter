@@ -9,7 +9,7 @@ export default defineComponent({
   name: "VueWordHighlighter",
   props: {
     query: {
-      type: [String, Object as () => RegExp],
+      type: [String, RegExp],
       required: true,
       default: "",
     },
