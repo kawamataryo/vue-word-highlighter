@@ -1,6 +1,6 @@
 import typescript from "rollup-plugin-typescript2";
 import dts from "rollup-plugin-dts";
-import pkg from "./package.json";
+import pkg from "./package.json" assert { type: "json" };
 import { terser } from "rollup-plugin-terser";
 import { defineConfig } from "rollup";
 
