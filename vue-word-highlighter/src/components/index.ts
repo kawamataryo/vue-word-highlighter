@@ -1,4 +1,4 @@
-import { defineComponent, h, install, PropType } from "vue-demi";
+import { defineComponent, h, install, PropType, isVue3 } from "vue-demi";
 import { extractDefaultSlotsText } from "../utils/extractDefaultSlotsText";
 import { createHighlightWordChunk } from "../utils/createHighlightWordChunk";
 import { extractMatchesStrings } from "../utils/extractMatchesStrings";
@@ -53,11 +53,56 @@ export default defineComponent({
       type: String,
       default: "",
     },
+    htmlToHighlight: {
+      type: String,
+      default: "",
+    },
   },
   emits: ["matches"],
   setup(props, ctx) {
     return () => {
-      // If textToHighlight is exist, give priority to that.
+      // preferred htmlToHighlight if provided
+      if (props.htmlToHighlight) {
+        if (!isVue3) {
+          throw new Error("htmlToHighlight prop is only supported in Vue 3");
+        }
+        const HTML_TAG_PATTERN = `(<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>)`;
+        const words: string[] = props.htmlToHighlight.split(
+          new RegExp(HTML_TAG_PATTERN, "gs")
+        );
+        const highlightedHtml = words
+          .map((word, i) => {
+            // Skip if the word is inside a script tag
+            if (new RegExp(HTML_TAG_PATTERN).test(word)) {
+              return word;
+            }
+            // Skip if the word is inside a script tag
+            if (i > 0 && words[i - 1].startsWith("<script")) {
+              return word;
+            }
+
+            return createHighlightWordChunk(
+              word,
+              {
+                query: props.query,
+                splitBySpace: props.splitBySpace,
+                caseSensitive: props.caseSensitive,
+                diacriticsSensitive: props.diacriticsSensitive,
+                highlightTag: props.highlightTag,
+                highlightClass: props.highlightClass,
+                highlightStyle: props.highlightStyle,
+              },
+              true
+            );
+          })
+          .join("");
+
+        return h(props.wrapperTag, {
+          class: props.wrapperClass,
+          innerHTML: highlightedHtml,
+        });
+      }
+
       const targetText = props.textToHighlight
         ? props.textToHighlight
         : extractDefaultSlotsText(ctx.slots);

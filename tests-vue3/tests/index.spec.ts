@@ -1,6 +1,7 @@
 import { mount } from "@vue/test-utils";
 import VueWordHighlighter from "../../vue-word-highlighter/src/components";
 import WrappedWordHighlighter from "./fixtures/WrappedWordHighlighter.vue";
+import { describe, it, expect } from "vitest";
 
 describe("VueWordHighlighter", () => {
   const createWrapper = (
@@ -299,6 +300,39 @@ describe("VueWordHighlighter", () => {
           "ipsum",
         ]);
       });
+    });
+  });
+
+  describe("htmlToHighlight", () => {
+    it("should highlight word", () => {
+      const htmlToHighlight = `
+<b>hoge dummy</b>
+foo dummy
+<script>alert('dummy')</script>
+`;
+      const expectedText = `
+<span class="">
+<b>hoge <mark class="red-color" style="font-weight: bold">dummy</mark></b>
+foo <mark class="red-color" style="font-weight: bold">dummy</mark>
+<script>alert('dummy')</script>
+</span>
+`.trim();
+      const wrapper = createWrapper(
+        {
+          query: "dummy",
+          highlightClass: "red-color",
+          highlightStyle: "font-weight: bold",
+          htmlToHighlight,
+        },
+        ""
+      );
+
+      const highlightWords = wrapper.findAll("mark");
+
+      expect(highlightWords.length).toBe(2);
+      expect(highlightWords[0].text()).toBe("dummy");
+      expect(highlightWords[1].text()).toBe("dummy");
+      expect(wrapper.html()).toBe(expectedText);
     });
   });
 });
