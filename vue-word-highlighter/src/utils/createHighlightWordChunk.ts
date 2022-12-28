@@ -46,7 +46,8 @@ export const createHighlightWordChunk = (
     highlightTag: string;
     highlightClass: Record<string, boolean> | string | string[];
     highlightStyle: Record<string, boolean> | string | string[];
-  }
+  },
+  isHtml = false
 ) => {
   if (
     !options.query ||
@@ -81,17 +82,35 @@ export const createHighlightWordChunk = (
     ? getRowWordList(targetText, wordList)
     : wordList;
 
-  return wordList.map((w: string, i: number) => {
-    if (pattern.test(w)) {
-      return h(
-        options.highlightTag,
-        {
-          class: options.highlightClass,
-          style: options.highlightStyle,
-        },
-        restoredWordList[i]
-      );
-    }
-    return restoredWordList[i];
-  });
+  if (isHtml) {
+    return wordList
+      .map((w: string, i: number) => {
+        if (pattern.test(w)) {
+          // FIXME: highlightClass and highlightStyle are only supported as string
+          const classLiteral = options.highlightClass
+            ? ` class="${options.highlightClass}"`
+            : "";
+          const styleLiteral = options.highlightStyle
+            ? ` style="${options.highlightStyle}"`
+            : "";
+          return `<${options.highlightTag}${classLiteral}${styleLiteral}>${restoredWordList[i]}</${options.highlightTag}>`;
+        }
+        return restoredWordList[i];
+      })
+      .join("");
+  } else {
+    return wordList.map((w: string, i: number) => {
+      if (pattern.test(w)) {
+        return h(
+          options.highlightTag,
+          {
+            class: options.highlightClass,
+            style: options.highlightStyle,
+          },
+          restoredWordList[i]
+        );
+      }
+      return restoredWordList[i];
+    });
+  }
 };
