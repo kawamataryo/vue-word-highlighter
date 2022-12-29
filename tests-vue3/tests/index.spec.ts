@@ -2,11 +2,12 @@ import { mount } from "@vue/test-utils";
 import VueWordHighlighter from "../../vue-word-highlighter/src/components";
 import WrappedWordHighlighter from "./fixtures/WrappedWordHighlighter.vue";
 import { describe, it, expect } from "vitest";
+import { createTextVNode, h, VNode } from "vue-demi";
 
 describe("VueWordHighlighter", () => {
   const createWrapper = (
     props: Record<string, unknown>,
-    defaultSlot: string
+    defaultSlot: string | VNode | VNode[]
   ) => {
     return mount(VueWordHighlighter, {
       propsData: props,
@@ -268,7 +269,7 @@ describe("VueWordHighlighter", () => {
 
       expect(highlightWords.length).toBe(1);
       expect(highlightWords[0].text()).toBe("dummy");
-      expect(wrapper.classes()).toEqual(["mb-2", "is-primary"]);
+      expect(wrapper.get("span").classes()).toEqual(["mb-2", "is-primary"]);
     });
   });
 
@@ -333,6 +334,35 @@ foo <mark class="red-color" style="font-weight: bold">dummy</mark>
       expect(highlightWords[0].text()).toBe("dummy");
       expect(highlightWords[1].text()).toBe("dummy");
       expect(wrapper.html()).toBe(expectedText);
+    });
+  });
+
+  describe("if nested tag in slot", () => {
+    it("should highlight word", () => {
+      const nodes = [
+        h("h1", {}, "h1 dummy"),
+        createTextVNode("foo dummy"),
+        h("p", {}, [h("b", "hoge dummy")]),
+      ];
+
+      const wrapper = createWrapper(
+        { query: "dummy foo", splitBySpace: true },
+        nodes
+      );
+      const highlightWords = wrapper.findAll("mark");
+
+      expect(highlightWords.length).toBe(4);
+      expect(highlightWords[0].text()).toBe("dummy");
+      expect(highlightWords[1].text()).toBe("foo");
+      expect(highlightWords[2].text()).toBe("dummy");
+      expect(highlightWords[3].text()).toBe("dummy");
+      expect(wrapper.html()).toBe(
+        `
+<h1><span class="">h1 <mark class="" style="">dummy</mark></span></h1>
+<span class=""><mark class="" style="">foo</mark> <mark class="" style="">dummy</mark></span>
+<p><b><span class="">hoge <mark class="" style="">dummy</mark></span></b></p>
+      `.trim()
+      );
     });
   });
 });

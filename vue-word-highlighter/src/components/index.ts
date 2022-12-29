@@ -1,6 +1,6 @@
-import { defineComponent, h, install, PropType, isVue3 } from "vue-demi";
-import { extractDefaultSlotsText } from "../utils/extractDefaultSlotsText";
+import { defineComponent, h, install, PropType, isVue3, VNode } from "vue-demi";
 import { createHighlightWordChunk } from "../utils/createHighlightWordChunk";
+import { extractDefaultSlotsText } from "../utils/extractDefaultSlotsText";
 import { extractMatchesStrings } from "../utils/extractMatchesStrings";
 
 install();
@@ -61,6 +61,9 @@ export default defineComponent({
   emits: ["matches"],
   setup(props, ctx) {
     return () => {
+      // --------------------------
+      // highlight html
+      // --------------------------
       // preferred htmlToHighlight if provided
       if (props.htmlToHighlight) {
         if (!isVue3) {
@@ -103,29 +106,127 @@ export default defineComponent({
         });
       }
 
-      const targetText = props.textToHighlight
-        ? props.textToHighlight
-        : extractDefaultSlotsText(ctx.slots);
+      // --------------------------
+      // highlight props text
+      // --------------------------
+      if (props.textToHighlight) {
+        const highlightWordChunk = createHighlightWordChunk(
+          props.textToHighlight,
+          {
+            query: props.query,
+            splitBySpace: props.splitBySpace,
+            caseSensitive: props.caseSensitive,
+            diacriticsSensitive: props.diacriticsSensitive,
+            highlightTag: props.highlightTag,
+            highlightClass: props.highlightClass,
+            highlightStyle: props.highlightStyle,
+          }
+        );
 
-      const highlightWordChunk = createHighlightWordChunk(targetText, {
-        query: props.query,
-        splitBySpace: props.splitBySpace,
-        caseSensitive: props.caseSensitive,
-        diacriticsSensitive: props.diacriticsSensitive,
-        highlightTag: props.highlightTag,
-        highlightClass: props.highlightClass,
-        highlightStyle: props.highlightStyle,
-      });
+        ctx.emit("matches", extractMatchesStrings(highlightWordChunk));
 
-      ctx.emit("matches", extractMatchesStrings(highlightWordChunk));
+        return h(
+          props.wrapperTag,
+          {
+            class: props.wrapperClass,
+          },
+          highlightWordChunk
+        );
+      }
 
-      return h(
-        props.wrapperTag,
-        {
-          class: props.wrapperClass,
-        },
-        highlightWordChunk
-      );
+      // --------------------------
+      // highlight slots
+      // --------------------------
+      if (isVue3) {
+        // only supported nested slots in Vue 3
+        if (ctx.slots && ctx.slots.default) {
+          const createHighlightedNode = (node: VNode): VNode => {
+            // if node have a text, it's a text node
+            if (typeof node.children == "string") {
+              const highlightWordChunk = createHighlightWordChunk(
+                node.children,
+                {
+                  query: props.query,
+                  splitBySpace: props.splitBySpace,
+                  caseSensitive: props.caseSensitive,
+                  diacriticsSensitive: props.diacriticsSensitive,
+                  highlightTag: props.highlightTag,
+                  highlightClass: props.highlightClass,
+                  highlightStyle: props.highlightStyle,
+                }
+              );
+
+              const matchesStrings = extractMatchesStrings(highlightWordChunk);
+              ctx.emit("matches", matchesStrings);
+
+              if (matchesStrings.length === 0) {
+                return node;
+              }
+              // if node is not a string, it's a html tag
+              if (typeof node.type == "string") {
+                return h(
+                  node.type,
+                  {
+                    ...node.props,
+                  },
+                  [
+                    h(
+                      props.wrapperTag,
+                      {
+                        class: props.wrapperClass,
+                      },
+                      highlightWordChunk
+                    ),
+                  ]
+                );
+              } else {
+                return h(
+                  props.wrapperTag,
+                  {
+                    class: props.wrapperClass,
+                  },
+                  highlightWordChunk
+                );
+              }
+            } else {
+              return h(
+                node.type as string,
+                {
+                  ...node.props,
+                },
+                (node.children as VNode[]).map((c: VNode) =>
+                  createHighlightedNode(c)
+                )
+              );
+            }
+          };
+          const nodes = ctx.slots.default();
+          return nodes.map((n: VNode) => createHighlightedNode(n));
+        }
+      } else {
+        // not support nested slots in Vue 2
+        const targetText = extractDefaultSlotsText(ctx.slots);
+
+        const highlightWordChunk = createHighlightWordChunk(targetText, {
+          query: props.query,
+          splitBySpace: props.splitBySpace,
+          caseSensitive: props.caseSensitive,
+          diacriticsSensitive: props.diacriticsSensitive,
+          highlightTag: props.highlightTag,
+          highlightClass: props.highlightClass,
+          highlightStyle: props.highlightStyle,
+        });
+
+        ctx.emit("matches", extractMatchesStrings(highlightWordChunk));
+
+        return h(
+          props.wrapperTag,
+          {
+            class: props.wrapperClass,
+          },
+          highlightWordChunk
+        );
+      }
     };
   },
 });
