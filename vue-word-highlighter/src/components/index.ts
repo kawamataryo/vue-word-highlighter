@@ -190,10 +190,6 @@ export default defineComponent({
                 );
               }
             } else {
-              console.log(
-                "🚀 ~ file: index.ts:193 ~ createHighlightedNode ~ node.children",
-                node.children
-              );
               return h(
                 node.type as string,
                 {
