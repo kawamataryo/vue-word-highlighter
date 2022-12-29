@@ -189,19 +189,27 @@ export default defineComponent({
                 );
               }
             } else {
+              console.log(
+                "🚀 ~ file: index.ts:193 ~ createHighlightedNode ~ node.children",
+                node.children
+              );
               return h(
                 node.type as string,
                 {
                   ...node.props,
                 },
-                (node.children as VNode[]).map((c: VNode) =>
-                  createHighlightedNode(c)
-                )
+                Array.isArray(node.children)
+                  ? (node.children as VNode[]).map((c: VNode) =>
+                      createHighlightedNode(c)
+                    )
+                  : []
               );
             }
           };
           const nodes = ctx.slots.default();
-          return nodes.map((n: VNode) => createHighlightedNode(n));
+          return Array.isArray(nodes)
+            ? nodes.map((n: VNode) => createHighlightedNode(n))
+            : nodes;
         }
       } else {
         // not support nested slots in Vue 2
