@@ -83,7 +83,7 @@ Output.
 | wrapperTag | String |  | Type of tag to wrap around whole text; defaults to `span`. |
 | wrapperClass | String or Object or Array |  | Classes to be added to wrap around the whole tag. Similar to class bindings in vue, it accepts Array syntax, Object syntax, or class as String. |
 | textToHighlight | String |  | Text to be highlight. If this is not specified, the default slot value will be used for the search.  |
-| htmlToHighlight | String |  | Text to be highlighted。This value is inserted as `InnerHTML`. This props takes precedence over `textToHighlight` and `slot`. This props is an experimental feature that only works for Vue3. |
+| htmlToHighlight | String |  | HTML to be highlighted。This value is inserted as `InnerHTML`. This props takes precedence over `textToHighlight` and `slot`. This props is an experimental feature that only works for Vue3. |
 
 ### Emits
 
