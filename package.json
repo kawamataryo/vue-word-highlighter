@@ -45,7 +45,7 @@
     "eslint-plugin-vue": "9.8.0",
     "husky": "8.0.3",
     "lint-staged": "13.1.0",
-    "prettier": "2.8.1",
+    "prettier": "2.8.2",
     "semantic-release": "19.0.5",
     "vue": "3.2.45",
     "vue2": "npm:vue@2.7.14"
