@@ -14,7 +14,7 @@
     "@vue/test-utils1": "npm:@vue/test-utils@1.3.4",
     "jsdom": "21.1.0",
     "typescript": "4.9.4",
-    "vitest": "0.28.2",
+    "vitest": "0.28.3",
     "vue-demi": "0.13.11",
     "vue-template-compiler": "2.7.14",
     "vue-word-highlighter": "0.1.13"
