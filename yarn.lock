@@ -1060,7 +1060,7 @@
     estree-walker "^2.0.2"
     source-map "^0.6.1"
 
-"@vue/compiler-dom@3.2.45":
+"@vue/compiler-dom@3.2.45", "@vue/compiler-dom@^3.0.1":
   version "3.2.45"
   resolved "https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.2.45.tgz"
   integrity sha512-tyYeUEuKqqZO137WrZkpwfPCdiiIeXYCcJ8L4gWz9vqaxzIQRccTSwSWZ/Axx5YR2z+LvpUbmPNXxuBU45lyRw==
@@ -1163,12 +1163,14 @@
     lodash "^4.17.15"
     pretty "^2.0.0"
 
-"@vue/test-utils@2.2.8":
-  version "2.2.8"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.2.8.tgz#2002a2b2c90309f66c5c175b735621438832a610"
-  integrity sha512-/R8DKzp41Ip/RqTt1jvOVi5gxby3EwNWiYHNYsG9FAjEvt0gzDvYN55lCKzX7IdnI5zVIOo5tHtts0SLT+JrWw==
+"@vue/test-utils@2.2.9":
+  version "2.2.9"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.2.9.tgz#d915b204963582fd867c35277acddfd00efb6daa"
+  integrity sha512-WP2gmUX9hucNGCE+FMqdTwisRQcPkY+f9oaZOcUP/xdJbIbTwdCGeOpQzXe8h+W218SC7RPzfTFc6r8T3tkggg==
   dependencies:
     js-beautify "1.14.6"
+  optionalDependencies:
+    "@vue/compiler-dom" "^3.0.1"
 
 JSONStream@^1.0.4:
   version "1.3.5"
