@@ -1,6 +1,6 @@
 {
   "name": "vue-word-highlighter",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "The word highlighter library for Vue.js ",
   "main": "dist/vue-word-highlighter.cjs.js",
   "module": "dist/vue-word-highlighter.esm.js",
