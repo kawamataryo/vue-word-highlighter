@@ -1,4 +1,12 @@
-import { defineComponent, h, install, PropType, isVue3, VNode } from "vue-demi";
+import {
+  defineComponent,
+  h,
+  install,
+  PropType,
+  isVue3,
+  VNode,
+  Comment,
+} from "vue-demi";
 import { createHighlightWordChunk } from "../utils/createHighlightWordChunk";
 import { extractDefaultSlotsText } from "../utils/extractDefaultSlotsText";
 import { extractMatchesStrings } from "../utils/extractMatchesStrings";
@@ -142,8 +150,10 @@ export default defineComponent({
         // only supported nested slots in Vue 3
         if (ctx.slots && ctx.slots.default) {
           const createHighlightedNode = (node: VNode): VNode => {
-            // if node have a text, it's a text node
-            if (typeof node.children == "string") {
+            if (node.type === Comment) {
+              return node;
+            }
+            if (typeof node.children === "string") {
               const highlightWordChunk = createHighlightWordChunk(
                 node.children,
                 {
