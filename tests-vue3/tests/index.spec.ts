@@ -2,7 +2,7 @@ import { mount } from "@vue/test-utils";
 import VueWordHighlighter from "../../vue-word-highlighter/src/components";
 import WrappedWordHighlighter from "./fixtures/WrappedWordHighlighter.vue";
 import { describe, it, expect } from "vitest";
-import { createTextVNode, h, VNode } from "vue-demi";
+import { createCommentVNode, createTextVNode, h, VNode } from "vue-demi";
 
 describe("VueWordHighlighter", () => {
   const createWrapper = (
@@ -342,6 +342,10 @@ foo <mark class="red-color" style="font-weight: bold">dummy</mark>
       const nodes = [
         h("h1", {}, "h1 dummy"),
         createTextVNode("foo dummy"),
+        h("p", {}, [
+          createCommentVNode("this is dummy comment"),
+          createTextVNode("test"),
+        ]),
         h("p", {}, [h("b", "hoge dummy")]),
       ];
 
@@ -360,6 +364,9 @@ foo <mark class="red-color" style="font-weight: bold">dummy</mark>
         `
 <h1><span class="">h1 <mark class="" style="">dummy</mark></span></h1>
 <span class=""><mark class="" style="">foo</mark> <mark class="" style="">dummy</mark></span>
+<p>
+  <!--this is dummy comment-->test
+</p>
 <p><b><span class="">hoge <mark class="" style="">dummy</mark></span></b></p>
       `.trim()
       );
