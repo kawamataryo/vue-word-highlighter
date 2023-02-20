@@ -1269,7 +1269,7 @@
     "@vue/shared" "3.2.47"
     csstype "^2.6.8"
 
-"@vue/server-renderer@3.2.47":
+"@vue/server-renderer@3.2.47", "@vue/server-renderer@^3.0.1":
   version "3.2.47"
   resolved "https://registry.yarnpkg.com/@vue/server-renderer/-/server-renderer-3.2.47.tgz#8aa1d1871fc4eb5a7851aa7f741f8f700e6de3c0"
   integrity sha512-dN9gc1i8EvmP9RCzvneONXsKfBRgqFeFZLurmHOveL7oH6HiFXJw5OGu294n1nHc/HMgTy6LulU/tv5/A7f/LA==
@@ -1296,14 +1296,15 @@
     lodash "^4.17.15"
     pretty "^2.0.0"
 
-"@vue/test-utils@2.2.10":
-  version "2.2.10"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.2.10.tgz#d2a5e00c973c68818352aa01513dc6288d96d716"
-  integrity sha512-UPY+VdWST5vYZ/Qhl+sLuJAv596e6kTbrOPgdGY82qd9kGN/MfjzLT5KXlmpChkiCbPP3abZ8XT25u1n5h+mRg==
+"@vue/test-utils@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.3.0.tgz#0793a2bd94135c0374a720c38f76244997c4316b"
+  integrity sha512-S8/9Z+B4VSsTUNtZtzS7J1TfxJbf10n+gcH9X8cASbG0Tp7qD6vqs/sUNlmpzk6i7+pP00ptauJp9rygyW89Ww==
   dependencies:
     js-beautify "1.14.6"
   optionalDependencies:
     "@vue/compiler-dom" "^3.0.1"
+    "@vue/server-renderer" "^3.0.1"
 
 JSONStream@^1.0.4:
   version "1.3.5"
