@@ -7,7 +7,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "vue-demi": "0.13.11",
+    "vue-demi": "0.14.0",
     "vue": "3.2.47"
   },
   "devDependencies": {
