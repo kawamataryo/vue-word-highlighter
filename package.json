@@ -47,7 +47,7 @@
     "lint-staged": "13.2.2",
     "prettier": "2.8.8",
     "semantic-release": "19.0.5",
-    "vue": "3.3.1",
+    "vue": "3.3.2",
     "vue2": "npm:vue@2.7.14"
   },
   "lint-staged": {
