@@ -6454,10 +6454,10 @@ vitest@0.31.1:
     vite-node "0.31.1"
     why-is-node-running "^2.2.2"
 
-vue-demi@0.14.1:
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.14.1.tgz#1ed9af03a27642762bfed83d8750805302d0398d"
-  integrity sha512-rt+yuCtXvscYot9SQQj3WKZJVSriPNqVkpVBNEHPzSgBv7QIYzsS410VqVgvx8f9AAPgjg+XPKvmV3vOqqkJQQ==
+vue-demi@0.14.4:
+  version "0.14.4"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.14.4.tgz#e3e634eece46ad39e391523cde5b395d22f6cf33"
+  integrity sha512-YR9bCmtIYgsqNVRG3MLLWlhbZ9tTNMuWHPd7yx0pHS3NDX17MeVNHgKTOClYE8pBjsfNe4CMaReP7zQtHDIbiA==
 
 vue-demi@^0.11.2:
   version "0.11.2"
