@@ -10,7 +10,7 @@
     "@types/node": "18.16.19",
     "@vitejs/plugin-vue": "4.2.3",
     "@vue/compiler-sfc": "3.3.4",
-    "@vue/test-utils": "2.4.0",
+    "@vue/test-utils": "2.4.1",
     "jsdom": "21.1.2",
     "typescript": "5.1.6",
     "vitest": "0.33.0",
