@@ -41,11 +41,11 @@
     "@typescript-eslint/parser": "5.62.0",
     "@vue/composition-api": "1.7.1",
     "eslint": "8.46.0",
-    "eslint-config-prettier": "8.9.0",
+    "eslint-config-prettier": "8.10.0",
     "eslint-plugin-vue": "9.16.1",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
-    "prettier": "3.0.0",
+    "prettier": "3.0.1",
     "semantic-release": "19.0.5",
     "vue": "3.3.4",
     "vue2": "npm:vue@2.7.14"
