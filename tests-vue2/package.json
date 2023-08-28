@@ -15,7 +15,7 @@
     "jsdom": "21.1.2",
     "typescript": "5.2.2",
     "vitest": "0.34.3",
-    "vue-demi": "0.14.5",
+    "vue-demi": "0.14.6",
     "vue-template-compiler": "2.7.14",
     "vue-word-highlighter": "0.1.13"
   }
