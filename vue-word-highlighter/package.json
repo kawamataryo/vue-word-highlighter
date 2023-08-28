@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "diacritics": "1.3.0",
-    "vue-demi": "0.14.5"
+    "vue-demi": "0.14.6"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",
