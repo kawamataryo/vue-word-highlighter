@@ -44,7 +44,7 @@
     "eslint-config-prettier": "8.10.0",
     "eslint-plugin-vue": "9.17.0",
     "husky": "8.0.3",
-    "lint-staged": "13.2.3",
+    "lint-staged": "14.0.1",
     "prettier": "3.0.3",
     "semantic-release": "19.0.5",
     "vue": "3.3.4",
