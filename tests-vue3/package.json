@@ -7,7 +7,7 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "@types/node": "18.18.7",
+    "@types/node": "18.18.8",
     "@vitejs/plugin-vue": "4.4.0",
     "@vue/compiler-sfc": "3.3.7",
     "@vue/test-utils": "2.4.1",
