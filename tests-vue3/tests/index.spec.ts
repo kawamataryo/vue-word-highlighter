@@ -1,4 +1,3 @@
-import { diacritics } from "diacritics";
 import { mount } from "@vue/test-utils";
 import VueWordHighlighter from "../../vue-word-highlighter/src/components";
 import WrappedWordHighlighter from "./fixtures/WrappedWordHighlighter.vue";
@@ -13,6 +12,8 @@ describe("VueWordHighlighter", () => {
     return mount(VueWordHighlighter, {
       propsData: props,
       slots: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore for test
         default: defaultSlot,
       },
     });
