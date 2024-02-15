@@ -7,7 +7,10 @@
   "unpkg": "dist/vue-word-highlighter.global.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
-  "repository": "https://github.com/kawamataryo/vue-word-highlighter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kawamataryo/vue-word-highlighter.git"
+  },
   "author": "kawamataryo <ryo.kawamata0425@gmail.com>",
   "scripts": {
     "build": "rollup --config rollup.config.ts --configPlugin typescript --resolveJsonModule",
