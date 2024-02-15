@@ -5,3 +5,4 @@ dist-ssr
 *.local
 .eslintcache
 yarn-error.log
+node_modules
