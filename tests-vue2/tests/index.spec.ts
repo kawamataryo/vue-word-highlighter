@@ -8,7 +8,7 @@ describe("VueWordHighlighter", () => {
 
   const createWrapper = (
     props: Record<string, unknown>,
-    defaultSlot: string
+    defaultSlot: string,
   ) => {
     return mount(VueWordHighlighter, {
       propsData: props,
@@ -33,7 +33,7 @@ describe("VueWordHighlighter", () => {
       it("should highlight word", () => {
         const wrapper = createWrapper(
           { query: "Convallis", caseSensitive: true },
-          "Convallis is convallis"
+          "Convallis is convallis",
         );
 
         const highlightWords = wrapper.findAll("mark");
@@ -50,7 +50,7 @@ describe("VueWordHighlighter", () => {
             query: "Convallis",
             caseSensitive: false,
           },
-          "Convallis is convallis"
+          "Convallis is convallis",
         );
 
         const highlightWords = wrapper.findAll("mark");
@@ -67,7 +67,7 @@ describe("VueWordHighlighter", () => {
       it("should highlight word", () => {
         const wrapper = createWrapper(
           { query: "Internationalizati0n", diacriticsSensitive: true },
-          "Iлｔèｒｎåｔïｏｎɑｌíƶａｔï߀ԉ"
+          "Iлｔèｒｎåｔïｏｎɑｌíƶａｔï߀ԉ",
         );
 
         const highlightWords = wrapper.findAll("mark");
@@ -83,14 +83,14 @@ describe("VueWordHighlighter", () => {
             query: "Internationalizati0n",
             diacriticsSensitive: false,
           },
-          "aaa Iлｔèｒｎåｔïｏｎɑｌíƶａｔï߀ԉ"
+          "aaa Iлｔèｒｎåｔïｏｎɑｌíƶａｔï߀ԉ",
         );
 
         const highlightWords = wrapper.findAll("mark");
 
         expect(highlightWords.length).toBe(1);
         expect(highlightWords.at(0).text()).toBe(
-          "Iлｔèｒｎåｔïｏｎɑｌíƶａｔï߀ԉ"
+          "Iлｔèｒｎåｔïｏｎɑｌíƶａｔï߀ԉ",
         );
       });
     });
@@ -104,7 +104,7 @@ describe("VueWordHighlighter", () => {
             query: "lorem ipsum",
             splitBySpace: true,
           },
-          "Lorem Ipsum is simply dummy text of the printing and typesetting. lorem"
+          "Lorem Ipsum is simply dummy text of the printing and typesetting. lorem",
         );
 
         const highlightWords = wrapper.findAll("mark");
@@ -123,7 +123,7 @@ describe("VueWordHighlighter", () => {
             query: "lorem ipsum",
             splitBySpace: false,
           },
-          "Lorem Ipsum is simply dummy text of the printing and typesetting. lorem"
+          "Lorem Ipsum is simply dummy text of the printing and typesetting. lorem",
         );
 
         const highlightWords = wrapper.findAll("mark");
@@ -140,7 +140,7 @@ describe("VueWordHighlighter", () => {
         {
           query: /s\w+y/,
         },
-        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
+        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky",
       );
 
       const highlightWords = wrapper.findAll("mark");
@@ -155,7 +155,7 @@ describe("VueWordHighlighter", () => {
         {
           query: new RegExp("s\\w+y"),
         },
-        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
+        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky",
       );
 
       const highlightWords = wrapper.findAll("mark");
@@ -175,7 +175,7 @@ describe("VueWordHighlighter", () => {
           query: "dummy",
           textToHighlight,
         },
-        ""
+        "",
       );
 
       const highlightWords = wrapper.findAll("mark");
@@ -193,7 +193,7 @@ describe("VueWordHighlighter", () => {
           query: "dummy",
           highlightTag: "b",
         },
-        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
+        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky",
       );
 
       const highlightWords = wrapper.findAll("b");
@@ -211,7 +211,7 @@ describe("VueWordHighlighter", () => {
           query: "dummy",
           highlightClass: ["red-color"],
         },
-        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
+        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky",
       );
 
       const highlightWords = wrapper.find("mark");
@@ -230,7 +230,7 @@ describe("VueWordHighlighter", () => {
             color: "green",
           },
         },
-        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky"
+        "Lorem Ipsum is simply dummy text of the printing and typesetting. sticky",
       );
 
       const highlightWords = wrapper.find("mark");
@@ -249,7 +249,7 @@ describe("VueWordHighlighter", () => {
           query: "dummy",
           wrapperTag: "div",
         },
-        textToHighlight
+        textToHighlight,
       );
 
       const highlightWords = wrapper.findAll("mark");
@@ -269,7 +269,7 @@ describe("VueWordHighlighter", () => {
           query: "dummy",
           wrapperClass: ["mb-2", "is-primary"],
         },
-        textToHighlight
+        textToHighlight,
       );
 
       const highlightWords = wrapper.findAll("mark");
@@ -289,7 +289,7 @@ describe("VueWordHighlighter", () => {
           {
             query: "dummy",
           },
-          textToHighlight
+          textToHighlight,
         );
         expect(wrapper.emitted().matches!.length).toBe(1);
         expect(wrapper.emitted().matches![0][0]).toEqual(["dummy"]);

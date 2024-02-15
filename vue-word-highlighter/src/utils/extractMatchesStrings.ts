@@ -1,7 +1,7 @@
 import { isVue3 } from "vue-demi";
 
 export const extractMatchesStrings = (
-  wordChunk: string | (string | unknown)[]
+  wordChunk: string | (string | unknown)[],
 ): string[] => {
   if (typeof wordChunk === "string") {
     return [];
