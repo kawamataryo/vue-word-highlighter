@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@types/node": "18.19.16",
-    "@vitejs/plugin-vue": "4.4.1",
+    "@vitejs/plugin-vue": "4.6.2",
     "@vue/compiler-sfc": "3.3.8",
     "@vue/test-utils": "2.4.4",
     "jsdom": "21.1.2",
