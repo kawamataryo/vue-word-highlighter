@@ -79,7 +79,7 @@ export default defineComponent({
         }
         const HTML_TAG_PATTERN = `(<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>)`;
         const words: string[] = props.htmlToHighlight.split(
-          new RegExp(HTML_TAG_PATTERN, "gs")
+          new RegExp(HTML_TAG_PATTERN, "gs"),
         );
         const highlightedHtml = words
           .map((word, i) => {
@@ -103,7 +103,7 @@ export default defineComponent({
                 highlightClass: props.highlightClass,
                 highlightStyle: props.highlightStyle,
               },
-              true
+              true,
             );
           })
           .join("");
@@ -128,7 +128,7 @@ export default defineComponent({
             highlightTag: props.highlightTag,
             highlightClass: props.highlightClass,
             highlightStyle: props.highlightStyle,
-          }
+          },
         );
 
         ctx.emit("matches", extractMatchesStrings(highlightWordChunk));
@@ -138,7 +138,7 @@ export default defineComponent({
           {
             class: props.wrapperClass,
           },
-          highlightWordChunk
+          highlightWordChunk,
         );
       }
 
@@ -164,7 +164,7 @@ export default defineComponent({
                   highlightTag: props.highlightTag,
                   highlightClass: props.highlightClass,
                   highlightStyle: props.highlightStyle,
-                }
+                },
               );
 
               const matchesStrings = extractMatchesStrings(highlightWordChunk);
@@ -186,9 +186,9 @@ export default defineComponent({
                       {
                         class: props.wrapperClass,
                       },
-                      highlightWordChunk
+                      highlightWordChunk,
                     ),
-                  ]
+                  ],
                 );
               } else {
                 return h(
@@ -196,7 +196,7 @@ export default defineComponent({
                   {
                     class: props.wrapperClass,
                   },
-                  highlightWordChunk
+                  highlightWordChunk,
                 );
               }
             } else {
@@ -207,9 +207,9 @@ export default defineComponent({
                 },
                 Array.isArray(node.children)
                   ? (node.children as VNode[]).map((c: VNode) =>
-                      createHighlightedNode(c)
+                      createHighlightedNode(c),
                     )
-                  : []
+                  : [],
               );
             }
           };
@@ -239,7 +239,7 @@ export default defineComponent({
           {
             class: props.wrapperClass,
           },
-          highlightWordChunk
+          highlightWordChunk,
         );
       }
     };

@@ -1,6 +1,6 @@
 export const getRowWordList = (
   word: string,
-  splittedWordList: string[]
+  splittedWordList: string[],
 ): string[] => {
   const rowWordList: string[] = [];
   splittedWordList.forEach((splittedWord) => {

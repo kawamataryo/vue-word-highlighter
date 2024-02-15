@@ -16,7 +16,7 @@ const createHighlightPattern = (options: {
   if (options.query instanceof RegExp) {
     return new RegExp(
       String.raw`(${options.query.source})`,
-      `g${options.caseSensitive ? "" : "i"}`
+      `g${options.caseSensitive ? "" : "i"}`,
     );
   }
 
@@ -32,7 +32,7 @@ const createHighlightPattern = (options: {
 
   return new RegExp(
     String.raw`${pattern}`,
-    `g${options.caseSensitive ? "" : "i"}`
+    `g${options.caseSensitive ? "" : "i"}`,
   );
 };
 
@@ -47,7 +47,7 @@ export const createHighlightWordChunk = (
     highlightClass: Record<string, boolean> | string | string[];
     highlightStyle: Record<string, boolean> | string | string[];
   },
-  isHtml = false
+  isHtml = false,
 ) => {
   if (
     !options.query ||
@@ -64,7 +64,7 @@ export const createHighlightWordChunk = (
     innerTargetText = diacritics.remove(innerTargetText);
     innerQuery =
       options.query instanceof RegExp
-        ? options.query
+        ? new RegExp(diacritics.remove(options.query.source))
         : diacritics.remove(options.query);
     hasDiacritics = innerTargetText !== targetText;
   }
@@ -107,7 +107,7 @@ export const createHighlightWordChunk = (
             class: options.highlightClass,
             style: options.highlightStyle,
           },
-          restoredWordList[i]
+          restoredWordList[i],
         );
       }
       return restoredWordList[i];
