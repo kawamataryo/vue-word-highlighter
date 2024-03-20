@@ -17,7 +17,7 @@
     "bulma": "0.9.4",
     "bulma-extensions": "6.2.7",
     "sass": "1.72.0",
-    "typescript": "5.4.2",
+    "typescript": "5.4.3",
     "vite": "4.5.0"
   }
 }
