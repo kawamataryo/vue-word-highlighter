@@ -22,7 +22,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "vue-demi": "0.14.9"
+    "vue-demi": "0.14.10"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",
