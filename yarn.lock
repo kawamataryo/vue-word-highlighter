@@ -1088,10 +1088,10 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-14.18.26.tgz"
   integrity sha512-0b+utRBSYj8L7XAp0d+DX7lI4cSmowNaaTkk6/1SKzbKkG+doLuPusB9EOvzLJ8ahJSk03bTLIL6cWaEd4dBKA==
 
-"@types/node@18.19.47":
-  version "18.19.47"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.47.tgz#18076201ad7dd3445046df6ce9ead5fe5abd9387"
-  integrity sha512-1f7dB3BL/bpd9tnDJrrHb66Y+cVrhxSOTGorRNdHwYTUlTay3HuTDPKo9a/4vX9pMQkhYBcAbL4jQdNlhCFP9A==
+"@types/node@18.19.48":
+  version "18.19.48"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.48.tgz#3a1696f4a7298d8831ed9ce47db62bf4c62c8880"
+  integrity sha512-7WevbG4ekUcRQSZzOwxWgi5dZmTak7FaxXDoW7xVxPBmKx1rTzfmRLkeCgJzcbBnOV2dkhAPc8cCeT6agocpjg==
   dependencies:
     undici-types "~5.26.4"
 
