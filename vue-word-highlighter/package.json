@@ -30,7 +30,7 @@
     }
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^11.0.0",
+    "@rollup/plugin-typescript": "^12.0.0",
     "@types/diacritics": "1.3.3",
     "rollup": "3.29.5",
     "rollup-plugin-dts": "5.3.1",
