@@ -11,15 +11,15 @@
     <p class="subtitle is-6 mt-3 mb-5">
       The word highlighter library for Vue 2.x & Vue 3.x.
     </p>
-    <div class="columns is-variable is-0-mobile">
+    <div class="columns">
       <div class="column is-half">
         <div class="box height-100">
           <InputBlock
             v-model:query="query"
             v-model:paragraph="paragraph"
-            v-model:caseSensitive="options.caseSensitive"
-            v-model:splitBySpace="options.splitBySpace"
-            v-model:diacriticsSensitive="options.diacriticsSensitive"
+            v-model:case-sensitive="options.caseSensitive"
+            v-model:split-by-space="options.splitBySpace"
+            v-model:diacritics-sensitive="options.diacriticsSensitive"
           ></InputBlock>
         </div>
       </div>

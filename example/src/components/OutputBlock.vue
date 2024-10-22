@@ -6,6 +6,7 @@
       v-for="(word, index) in searchWords"
       :key="index"
       class="tag is-primary is-medium"
+      :style="{ backgroundColor: 'var(--bulma-primary)', color: '#fff' }"
       >{{ word }}</span
     >
   </div>
@@ -14,7 +15,10 @@
     {{ matchedWords.length }}
   </div>
   <label class="label">Result</label>
-  <div class="result-wrapper has-background-primary-light">
+  <div
+    class="result-wrapper"
+    :style="{ backgroundColor: 'var(--bulma-primary-light)' }"
+  >
     <WordHighlighter
       :query="query"
       :split-by-space="splitBySpace"

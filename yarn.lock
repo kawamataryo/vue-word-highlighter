@@ -1868,11 +1868,6 @@ builtins@^5.0.0:
   dependencies:
     semver "^7.0.0"
 
-bulma-extensions@6.2.7:
-  version "6.2.7"
-  resolved "https://registry.npmjs.org/bulma-extensions/-/bulma-extensions-6.2.7.tgz"
-  integrity sha512-y3dHsxlCYkuxUg87KKN9H4InM8NCk8tdnrlxLkYak8sd2WQdllg3wP2Nv41lj8X46uPXX2ADP0MO65LlXPHt/Q==
-
 bulma@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/bulma/-/bulma-1.0.2.tgz#47395a660755c9566db3cf981fd4e3a2b637af19"

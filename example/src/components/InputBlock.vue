@@ -5,7 +5,11 @@
     <div class="control">
       <input
         :value="query"
-        class="input is-primary"
+        class="input"
+        :style="{
+          color:
+            'hsl(var(--bulma-input-h), var(--bulma-input-s), var(--bulma-input-color-l))',
+        }"
         type="text"
         placeholder="words"
         @input="onInput('query', $event)"

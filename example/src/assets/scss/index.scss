@@ -1,9 +1,14 @@
 @charset "utf-8";
+@import "../../../../node_modules/bulma/bulma";
 
 $primary: #41b883;
 
-@import "../../../../node_modules/bulma/bulma";
-@import "../../../../node_modules/bulma-extensions/bulma-checkradio/src/sass/index";
+:root {
+  --bulma-primary: #41b883;
+  --bulma-primary-base: #41b883;
+  --bulma-primary-light: #f0faf5;
+  --bulma-tag-background-l: #41b883;
+}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
