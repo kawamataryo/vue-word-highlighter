@@ -21,14 +21,17 @@ We accept contributions via Pull Requests on [Github](https://github.com/kawamat
 
 - **Send coherent history** - Make sure your commits message means something
 
+## Viewing the Example Site
+
+```
+$ yarn workspace example run dev
+```
 
 ## Running Tests
 
 ``` bash
-# Vue2
-$ yarn add vue@2 -W && yarn test:v2
 # Vue3
-$ yarn add vue -W && yarn test:v3
+$ yarn workspace tests-vue3 run test
 ```
 
 
