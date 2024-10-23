@@ -129,6 +129,43 @@ describe("VueWordHighlighter", () => {
     });
   });
 
+  describe("matchMode", () => {
+    describe("partial", () => {
+      it("should highlight word", () => {
+        const wrapper = createWrapper(
+          {
+            query: "java",
+            matchMode: "partial",
+          },
+          "I love Java and JavaScript.",
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(2);
+        expect(highlightWords[0].text()).toBe("Java");
+        expect(highlightWords[1].text()).toBe("Java");
+      });
+    });
+
+    describe("exact", () => {
+      it("should highlight word", () => {
+        const wrapper = createWrapper(
+          {
+            query: "java",
+            matchMode: "exact",
+          },
+          "I love Java and JavaScript.",
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(1);
+        expect(highlightWords[0].text()).toBe("Java");
+      });
+    });
+  });
+
   describe("regex", () => {
     it("should highlight word if literal", () => {
       const wrapper = createWrapper(
