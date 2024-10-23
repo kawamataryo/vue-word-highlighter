@@ -34,7 +34,7 @@
     "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "19.5.0",
-    "@types/node": "18.19.58",
+    "@types/node": "18.19.59",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "@vue/composition-api": "1.7.2",
