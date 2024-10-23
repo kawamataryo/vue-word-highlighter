@@ -21,9 +21,10 @@ const getWordTransformerForRegExp = (matchMode: MatchMode) => {
   if (matchMode === "partial") {
     return (word: string) => escapeRegExp(word);
   } else {
-    const DELEMETERS = String.raw`[.,\s\u3000。、]`;
+    const STARTING_DELIMETERS = String.raw`[\s/(\[{<'"|（『「\u3000]`;
+    const ENDING_DELIMETERS = String.raw`[.,\s/)\]}>:;'"!?|）』」。、\u3000]`;
     return (word: string) => {
-      return String.raw`(?<=^|${DELEMETERS})${escapeRegExp(word)}(?=$|${DELEMETERS})`;
+      return String.raw`(?<=^|${STARTING_DELIMETERS})${escapeRegExp(word)}(?=$|${ENDING_DELIMETERS})`;
     };
   }
 };

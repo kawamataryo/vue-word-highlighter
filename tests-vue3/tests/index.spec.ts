@@ -163,6 +163,22 @@ describe("VueWordHighlighter", () => {
         expect(highlightWords.length).toBe(1);
         expect(highlightWords[0].text()).toBe("C");
       });
+      it("recognizes various delimeters", () => {
+        const wrapper = createWrapper(
+          {
+            query: "C++",
+            matchMode: "exact",
+          },
+          "I love C++! (C++ is the best.) Who else loves C++?",
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(3);
+        expect(highlightWords[0].text()).toBe("C++");
+        expect(highlightWords[0].text()).toBe("C++");
+        expect(highlightWords[0].text()).toBe("C++");
+      });
     });
   });
 
