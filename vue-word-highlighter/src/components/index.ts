@@ -7,7 +7,10 @@ import {
   VNode,
   Comment,
 } from "vue-demi";
-import { createHighlightWordChunk } from "../utils/createHighlightWordChunk";
+import {
+  createHighlightWordChunk,
+  MatchMode,
+} from "../utils/createHighlightWordChunk";
 import { extractDefaultSlotsText } from "../utils/extractDefaultSlotsText";
 import { extractMatchesStrings } from "../utils/extractMatchesStrings";
 
@@ -32,6 +35,10 @@ export default defineComponent({
     splitBySpace: {
       type: Boolean,
       default: false,
+    },
+    matchMode: {
+      type: String as PropType<MatchMode>,
+      default: "partial",
     },
     highlightClass: {
       type: [Object, String, Array] as PropType<
@@ -99,6 +106,7 @@ export default defineComponent({
                 splitBySpace: props.splitBySpace,
                 caseSensitive: props.caseSensitive,
                 diacriticsSensitive: props.diacriticsSensitive,
+                matchMode: props.matchMode,
                 highlightTag: props.highlightTag,
                 highlightClass: props.highlightClass,
                 highlightStyle: props.highlightStyle,
@@ -125,6 +133,7 @@ export default defineComponent({
             splitBySpace: props.splitBySpace,
             caseSensitive: props.caseSensitive,
             diacriticsSensitive: props.diacriticsSensitive,
+            matchMode: props.matchMode,
             highlightTag: props.highlightTag,
             highlightClass: props.highlightClass,
             highlightStyle: props.highlightStyle,
@@ -161,6 +170,7 @@ export default defineComponent({
                   splitBySpace: props.splitBySpace,
                   caseSensitive: props.caseSensitive,
                   diacriticsSensitive: props.diacriticsSensitive,
+                  matchMode: props.matchMode,
                   highlightTag: props.highlightTag,
                   highlightClass: props.highlightClass,
                   highlightStyle: props.highlightStyle,
@@ -227,6 +237,7 @@ export default defineComponent({
           splitBySpace: props.splitBySpace,
           caseSensitive: props.caseSensitive,
           diacriticsSensitive: props.diacriticsSensitive,
+          matchMode: props.matchMode,
           highlightTag: props.highlightTag,
           highlightClass: props.highlightClass,
           highlightStyle: props.highlightStyle,

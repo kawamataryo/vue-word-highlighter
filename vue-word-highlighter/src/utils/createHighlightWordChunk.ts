@@ -2,14 +2,36 @@ import { h } from "vue-demi";
 import diacritics from "diacritics";
 import { getRowWordList } from "./getRowWordList";
 
+export type MatchMode = "exact" | "partial";
+type HighlightOptions = {
+  query: string | RegExp;
+  splitBySpace: boolean;
+  caseSensitive: boolean;
+  diacriticsSensitive: boolean;
+  matchMode: MatchMode;
+  highlightTag: string;
+  highlightClass: Record<string, boolean> | string | string[];
+  highlightStyle: Record<string, boolean> | string | string[];
+};
+
 const escapeRegExp = (text: string) => {
   return text.replace(/[-\\^$*+?.()|[\]{}]/g, "\\$&");
+};
+const getWordTransformerForRegExp = (matchMode: MatchMode) => {
+  if (matchMode === "partial") {
+    return (word: string) => escapeRegExp(word);
+  } else {
+    return (word: string) => {
+      return String.raw`\b${escapeRegExp(word)}\b`;
+    };
+  }
 };
 
 const createHighlightPattern = (options: {
   query: string | RegExp;
   splitBySpace: boolean;
   caseSensitive: boolean;
+  matchMode: "exact" | "partial";
 }): RegExp => {
   let pattern: string;
 
@@ -20,14 +42,18 @@ const createHighlightPattern = (options: {
     );
   }
 
+  const wordTransformerForRegExp = getWordTransformerForRegExp(
+    options.matchMode,
+  );
+
   if (options.splitBySpace) {
     const normalizeQuery = options.query.trim().replace(/\s+/g, " ");
     pattern = String.raw`(${normalizeQuery
       .split(/\s/)
-      .map(escapeRegExp)
+      .map(wordTransformerForRegExp)
       .join("|")})`;
   } else {
-    pattern = String.raw`(${escapeRegExp(options.query)})`;
+    pattern = String.raw`(${wordTransformerForRegExp(options.query)})`;
   }
 
   return new RegExp(
@@ -38,15 +64,7 @@ const createHighlightPattern = (options: {
 
 export const createHighlightWordChunk = (
   targetText: string,
-  options: {
-    query: string | RegExp;
-    splitBySpace: boolean;
-    caseSensitive: boolean;
-    diacriticsSensitive: boolean;
-    highlightTag: string;
-    highlightClass: Record<string, boolean> | string | string[];
-    highlightStyle: Record<string, boolean> | string | string[];
-  },
+  options: HighlightOptions,
   isHtml = false,
 ) => {
   if (
@@ -73,6 +91,7 @@ export const createHighlightWordChunk = (
     query: innerQuery,
     splitBySpace: options.splitBySpace,
     caseSensitive: options.caseSensitive,
+    matchMode: options.matchMode,
   });
 
   const wordList = innerTargetText.split(pattern);
