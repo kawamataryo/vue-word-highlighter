@@ -148,8 +148,8 @@ describe("VueWordHighlighter", () => {
         const highlightWords = wrapper.findAll("mark");
 
         expect(highlightWords.length).toBe(2);
-        expect(highlightWords[0].text()).toBe("C");
-        expect(highlightWords[1].text()).toBe("C");
+        expect(highlightWords.at(0).text()).toBe("C");
+        expect(highlightWords.at(1).text()).toBe("C");
       });
     });
 
@@ -166,7 +166,7 @@ describe("VueWordHighlighter", () => {
         const highlightWords = wrapper.findAll("mark");
 
         expect(highlightWords.length).toBe(1);
-        expect(highlightWords[0].text()).toBe("C");
+        expect(highlightWords.at(0).text()).toBe("C");
       });
       it("recognizes various delimeters", () => {
         const wrapper = createWrapper(
@@ -180,9 +180,9 @@ describe("VueWordHighlighter", () => {
         const highlightWords = wrapper.findAll("mark");
 
         expect(highlightWords.length).toBe(3);
-        expect(highlightWords[0].text()).toBe("C++");
-        expect(highlightWords[0].text()).toBe("C++");
-        expect(highlightWords[0].text()).toBe("C++");
+        expect(highlightWords.at(0).text()).toBe("C++");
+        expect(highlightWords.at(1).text()).toBe("C++");
+        expect(highlightWords.at(2).text()).toBe("C++");
       });
     });
   });
