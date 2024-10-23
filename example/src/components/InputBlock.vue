@@ -17,7 +17,7 @@
     </div>
   </div>
   <label class="label">Options</label>
-  <div class="field is-grouped is-grouped-multiline">
+  <div class="field is-grouped is-grouped-multiline mb-2">
     <div class="control">
       <input
         id="options-split-by-space"
@@ -48,6 +48,17 @@
       />
       <label for="options-diacritics-sensitive">Diacritics sensitive</label>
     </div>
+    <div class="control">
+      <label for="options-match-mode">Match Mode: </label>
+      <select
+        id="options-match-mode"
+        :value="matchMode"
+        @change="onInput('matchMode', $event)"
+      >
+        <option value="exact">exact</option>
+        <option value="partial">partial</option>
+      </select>
+    </div>
   </div>
   <div class="field is-hidden-mobile">
     <label class="label">Search target text</label>
@@ -69,7 +80,8 @@ type EmitName =
   | "paragraph"
   | "caseSensitive"
   | "splitBySpace"
-  | "diacriticsSensitive";
+  | "diacriticsSensitive"
+  | "matchMode";
 
 export default defineComponent({
   name: "InputBlock",
@@ -94,6 +106,10 @@ export default defineComponent({
       type: Boolean,
       required: true,
     },
+    matchMode: {
+      type: String,
+      required: true,
+    },
   },
   emits: [
     "update:query",
@@ -101,6 +117,7 @@ export default defineComponent({
     "update:caseSensitive",
     "update:splitBySpace",
     "update:diacriticsSensitive",
+    "update:matchMode",
   ],
   setup(_, ctx) {
     const onChange = (name: EmitName, e: { target: HTMLInputElement }) => {

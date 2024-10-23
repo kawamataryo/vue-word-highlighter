@@ -24,6 +24,7 @@
       :split-by-space="splitBySpace"
       :case-sensitive="caseSensitive"
       :diacritics-sensitive="diacriticsSensitive"
+      :match-mode="matchMode"
       @matches="
         (e) => {
           matchedWords = e;
@@ -62,6 +63,10 @@ export default defineComponent({
     },
     splitBySpace: {
       type: Boolean,
+      required: true,
+    },
+    matchMode: {
+      type: String,
       required: true,
     },
   },

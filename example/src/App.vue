@@ -20,6 +20,7 @@
             v-model:case-sensitive="options.caseSensitive"
             v-model:split-by-space="options.splitBySpace"
             v-model:diacritics-sensitive="options.diacriticsSensitive"
+            v-model:match-mode="options.matchMode"
           ></InputBlock>
         </div>
       </div>
@@ -31,6 +32,7 @@
             :case-sensitive="options.caseSensitive"
             :split-by-space="options.splitBySpace"
             :diacritics-sensitive="options.diacriticsSensitive"
+            :match-mode="options.matchMode"
           ></OutputBlock>
         </div>
       </div>
@@ -43,6 +45,7 @@ import { defineComponent, reactive, ref } from "vue";
 import ForkTag from "./components/ForkTag.vue";
 import InputBlock from "./components/InputBlock.vue";
 import OutputBlock from "./components/OutputBlock.vue";
+import { MatchMode } from "../../vue-word-highlighter/src/utils/createHighlightWordChunk";
 
 const DEFAULT_PARAGRAPH =
   'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature,  The first line of Lorem Ipsum, comes from a line in section 1.10.32.\n\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham. \n\n  Iлｔèｒｎåｔïｏｎɑｌíƶａｔï߀ԉ. internationalization.';
@@ -61,6 +64,7 @@ export default defineComponent({
       caseSensitive: false,
       splitBySpace: true,
       diacriticsSensitive: false,
+      matchMode: "partial" as MatchMode,
     });
     return {
       query,
