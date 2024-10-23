@@ -77,6 +77,7 @@ Output.
 | caseSensitive | Boolean |  | Whether string being searched is case sensitive. defaults to `false`. |
 | diacriticsSensitive | Boolean |  | Whether string being searched is diacritics sensitive. defaults to `false`. |
 | splitBySpace | Boolean |  | Whether split the string with spaces to make it a search string. If false, the string is being searched as a whole word. defaults to `false`. When the query is set to a RegExp, the value of splitBySpace will be set to false.  |
+| matchMode | "partial" or "exact" | If "exact", only whole words are matched. For example, searching for "Java" excludes "JavaScript". Defaults to "partial".
 | highlightTag | String |  | Type of tag to wrap around highlighted matches; defaults to `mark`. |
 | highlightClass | String or Object or Array |  | Classes to be added to highlighted tag. Similar to class bindings in vue, it accepts Array syntax, Object syntax, or class as String.|
 | highlightStyle | String or Object or Array | | Styles to be applied to highlighted tag. Similar to style bindings in vue, it accepts Array syntax, Object syntax, or plain styling as String. |

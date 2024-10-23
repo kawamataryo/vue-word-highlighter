@@ -134,6 +134,59 @@ describe("VueWordHighlighter", () => {
     });
   });
 
+  describe("matchMode", () => {
+    describe("partial", () => {
+      it("should highlight word", () => {
+        const wrapper = createWrapper(
+          {
+            query: "C",
+            matchMode: "partial",
+          },
+          "I love C, C++ and .NET.",
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(2);
+        expect(highlightWords[0].text()).toBe("C");
+        expect(highlightWords[1].text()).toBe("C");
+      });
+    });
+
+    describe("exact", () => {
+      it("should highlight word", () => {
+        const wrapper = createWrapper(
+          {
+            query: "C",
+            matchMode: "exact",
+          },
+          "I love C, C++ and .NET.",
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(1);
+        expect(highlightWords[0].text()).toBe("C");
+      });
+      it("recognizes various delimeters", () => {
+        const wrapper = createWrapper(
+          {
+            query: "C++",
+            matchMode: "exact",
+          },
+          "I love C++! (C++ is the best.) Who else loves C++?",
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(3);
+        expect(highlightWords[0].text()).toBe("C++");
+        expect(highlightWords[0].text()).toBe("C++");
+        expect(highlightWords[0].text()).toBe("C++");
+      });
+    });
+  });
+
   describe("regex", () => {
     it("should highlight word if literal", () => {
       const wrapper = createWrapper(
