@@ -21,8 +21,9 @@ const getWordTransformerForRegExp = (matchMode: MatchMode) => {
   if (matchMode === "partial") {
     return (word: string) => escapeRegExp(word);
   } else {
+    const DELEMETERS = String.raw`[.,\s\u3000。、]`;
     return (word: string) => {
-      return String.raw`\b${escapeRegExp(word)}\b`;
+      return String.raw`(?<=^|${DELEMETERS})${escapeRegExp(word)}(?=$|${DELEMETERS})`;
     };
   }
 };

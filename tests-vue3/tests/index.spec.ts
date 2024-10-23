@@ -134,17 +134,17 @@ describe("VueWordHighlighter", () => {
       it("should highlight word", () => {
         const wrapper = createWrapper(
           {
-            query: "java",
+            query: "C",
             matchMode: "partial",
           },
-          "I love Java and JavaScript.",
+          "I love C, C++ and .NET.",
         );
 
         const highlightWords = wrapper.findAll("mark");
 
         expect(highlightWords.length).toBe(2);
-        expect(highlightWords[0].text()).toBe("Java");
-        expect(highlightWords[1].text()).toBe("Java");
+        expect(highlightWords[0].text()).toBe("C");
+        expect(highlightWords[1].text()).toBe("C");
       });
     });
 
@@ -152,16 +152,16 @@ describe("VueWordHighlighter", () => {
       it("should highlight word", () => {
         const wrapper = createWrapper(
           {
-            query: "java",
+            query: "C",
             matchMode: "exact",
           },
-          "I love Java and JavaScript.",
+          "I love C, C++ and .NET.",
         );
 
         const highlightWords = wrapper.findAll("mark");
 
         expect(highlightWords.length).toBe(1);
-        expect(highlightWords[0].text()).toBe("Java");
+        expect(highlightWords[0].text()).toBe("C");
       });
     });
   });
