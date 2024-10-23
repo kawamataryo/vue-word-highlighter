@@ -30,7 +30,7 @@ jobs:
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
 
-      - name: Run ESLint
+      - name: Run Biome
         run: yarn run lint
 
       - name: Install vue3
