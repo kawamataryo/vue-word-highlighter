@@ -77,13 +77,14 @@ Output.
 | caseSensitive | Boolean |  | Whether string being searched is case sensitive. defaults to `false`. |
 | diacriticsSensitive | Boolean |  | Whether string being searched is diacritics sensitive. defaults to `false`. |
 | splitBySpace | Boolean |  | Whether split the string with spaces to make it a search string. If false, the string is being searched as a whole word. defaults to `false`. When the query is set to a RegExp, the value of splitBySpace will be set to false.  |
+| matchMode | "partial" or "exact" | If "exact", only whole words are matched. For example, searching for "Java" excludes "JavaScript". Defaults to "partial".
 | highlightTag | String |  | Type of tag to wrap around highlighted matches; defaults to `mark`. |
 | highlightClass | String or Object or Array |  | Classes to be added to highlighted tag. Similar to class bindings in vue, it accepts Array syntax, Object syntax, or class as String.|
 | highlightStyle | String or Object or Array | | Styles to be applied to highlighted tag. Similar to style bindings in vue, it accepts Array syntax, Object syntax, or plain styling as String. |
 | wrapperTag | String |  | Type of tag to wrap around whole text; defaults to `span`. |
 | wrapperClass | String or Object or Array |  | Classes to be added to wrap around the whole tag. Similar to class bindings in vue, it accepts Array syntax, Object syntax, or class as String. |
 | textToHighlight | String |  | Text to be highlight. If this is not specified, the default slot value will be used for the search.  |
-| htmlToHighlight | String |  | Text to be highlighted。This value is inserted as `InnerHTML`. This props takes precedence over `textToHighlight` and `slot`. This props is an experimental feature that only works for Vue3. |
+| htmlToHighlight | String |  | HTML to be highlighted。This value is inserted as `InnerHTML`. This props takes precedence over `textToHighlight` and `slot`. This props is an experimental feature that only works for Vue3. |
 
 ### Emits
 
