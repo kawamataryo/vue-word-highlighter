@@ -13,7 +13,7 @@
     "@vue/test-utils": "2.4.6",
     "jsdom": "25.0.1",
     "typescript": "5.7.2",
-    "vitest": "2.1.5",
+    "vitest": "2.1.6",
     "vue": "3.5.13",
     "vue-demi": "0.14.10"
   }
