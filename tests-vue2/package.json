@@ -9,7 +9,7 @@
   "devDependencies": {
     "@types/node": "18.19.66",
     "@vitejs/plugin-vue": "4.6.2",
-    "@vitejs/plugin-vue2": "2.3.1",
+    "@vitejs/plugin-vue2": "2.3.3",
     "@vue/composition-api": "1.7.2",
     "@vue/test-utils1": "npm:@vue/test-utils@1.3.6",
     "jsdom": "25.0.1",
