@@ -12,7 +12,7 @@
     "@vue/compiler-sfc": "3.5.13",
     "@vue/test-utils": "2.4.6",
     "jsdom": "26.0.0",
-    "typescript": "5.7.3",
+    "typescript": "5.8.2",
     "vitest": "3.0.7",
     "vue": "3.5.13",
     "vue-demi": "0.14.10"
