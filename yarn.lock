@@ -1500,10 +1500,10 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-14.18.26.tgz"
   integrity sha512-0b+utRBSYj8L7XAp0d+DX7lI4cSmowNaaTkk6/1SKzbKkG+doLuPusB9EOvzLJ8ahJSk03bTLIL6cWaEd4dBKA==
 
-"@types/node@18.19.92":
-  version "18.19.92"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.92.tgz#310e8c402cdb012e95bcf2cca51375f1a5fc63fc"
-  integrity sha512-DYTBaj3qstumDYGzLtom1AkpvhLYJ77a84AoVj2k502d5FGcMs684hEIWoVzo0oYq/LErMtgMbt1MPSZkiGRPQ==
+"@types/node@18.19.96":
+  version "18.19.96"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.96.tgz#34b4ecfe4fe864f4e59994d2108cd1659ba37683"
+  integrity sha512-PzBvgsZ7YdFs/Kng1BSW8IGv68/SPcOxYYhT7luxD7QyzIhFS1xPTpfK3K9eHBa7hVwlW+z8nN0mOd515yaduQ==
   dependencies:
     undici-types "~5.26.4"
 
