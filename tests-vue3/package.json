@@ -9,12 +9,12 @@
   "devDependencies": {
     "@types/node": "18.19.120",
     "@vitejs/plugin-vue": "6.0.0",
-    "@vue/compiler-sfc": "3.5.17",
+    "@vue/compiler-sfc": "3.5.18",
     "@vue/test-utils": "2.4.6",
     "jsdom": "26.1.0",
     "typescript": "5.8.3",
     "vitest": "3.2.4",
-    "vue": "3.5.17",
+    "vue": "3.5.18",
     "vue-demi": "0.14.10"
   }
 }
