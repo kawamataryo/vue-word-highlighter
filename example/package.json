@@ -11,7 +11,7 @@
     "vue": "3.5.18"
   },
   "devDependencies": {
-    "@types/node": "18.19.120",
+    "@types/node": "18.19.121",
     "@vitejs/plugin-vue": "6.0.1",
     "@vue/compiler-sfc": "3.5.18",
     "bulma": "1.0.4",
