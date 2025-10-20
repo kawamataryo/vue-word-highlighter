@@ -40,7 +40,7 @@
     "@vue/composition-api": "1.7.2",
     "husky": "8.0.3",
     "lint-staged": "16.2.4",
-    "semantic-release": "25.0.0",
+    "semantic-release": "25.0.1",
     "vue": "3.5.22",
     "vue2": "npm:vue@2.7.16"
   },
