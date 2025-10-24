@@ -177,6 +177,113 @@ describe("VueWordHighlighter", () => {
         expect(highlightWords[0].text()).toBe("C++");
         expect(highlightWords[0].text()).toBe("C++");
       });
+      it("recognizes full-width slash as delimiter", () => {
+        const wrapper = createWrapper(
+          {
+            query: "test",
+            matchMode: "exact",
+          },
+          "test／foo／test／bar",
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(2);
+        expect(highlightWords[0].text()).toBe("test");
+        expect(highlightWords[1].text()).toBe("test");
+      });
+      it("recognizes full-width space as delimiter", () => {
+        const wrapper = createWrapper(
+          {
+            query: "単語",
+            matchMode: "exact",
+          },
+          "これは　単語　です",
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(1);
+        expect(highlightWords[0].text()).toBe("単語");
+      });
+      it("recognizes Japanese brackets as delimiters", () => {
+        const wrapper = createWrapper(
+          {
+            query: "test",
+            matchMode: "exact",
+          },
+          "「test」は『test』です",
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(2);
+        expect(highlightWords[0].text()).toBe("test");
+        expect(highlightWords[1].text()).toBe("test");
+      });
+      it("recognizes full-width parentheses as delimiters", () => {
+        const wrapper = createWrapper(
+          {
+            query: "word",
+            matchMode: "exact",
+          },
+          "（word）と(word)",
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(2);
+        expect(highlightWords[0].text()).toBe("word");
+        expect(highlightWords[1].text()).toBe("word");
+      });
+      it("recognizes various punctuation marks as delimiters", () => {
+        const wrapper = createWrapper(
+          {
+            query: "word",
+            matchMode: "exact",
+          },
+          "word:word;word|word!word?word.",
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(6);
+        for (const hw of highlightWords) {
+          expect(hw.text()).toBe("word");
+        }
+      });
+      it("recognizes square and curly brackets as delimiters", () => {
+        const wrapper = createWrapper(
+          {
+            query: "item",
+            matchMode: "exact",
+          },
+          createTextVNode("[item] {item} <item>"),
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(3);
+        expect(highlightWords[0].text()).toBe("item");
+        expect(highlightWords[1].text()).toBe("item");
+        expect(highlightWords[2].text()).toBe("item");
+      });
+      it("recognizes quotes as delimiters", () => {
+        const wrapper = createWrapper(
+          {
+            query: "word",
+            matchMode: "exact",
+          },
+          `'word' "word" |word|`,
+        );
+
+        const highlightWords = wrapper.findAll("mark");
+
+        expect(highlightWords.length).toBe(3);
+        expect(highlightWords[0].text()).toBe("word");
+        expect(highlightWords[1].text()).toBe("word");
+        expect(highlightWords[2].text()).toBe("word");
+      });
     });
   });
 

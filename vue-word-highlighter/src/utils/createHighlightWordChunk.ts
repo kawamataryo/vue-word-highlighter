@@ -1,5 +1,5 @@
-import { h } from "vue-demi";
 import diacritics from "diacritics";
+import { h } from "vue-demi";
 import { getRowWordList } from "./getRowWordList";
 
 export type MatchMode = "exact" | "partial";
@@ -20,13 +20,13 @@ const escapeRegExp = (text: string) => {
 const getWordTransformerForRegExp = (matchMode: MatchMode) => {
   if (matchMode === "partial") {
     return (word: string) => escapeRegExp(word);
-  } else {
-    const STARTING_DELIMETERS = String.raw`[\s/(\[{<'"|（『「\u3000]`;
-    const ENDING_DELIMETERS = String.raw`[.,\s/)\]}>:;'"!?|）』」。、\u3000]`;
-    return (word: string) => {
-      return String.raw`(?<=^|${STARTING_DELIMETERS})${escapeRegExp(word)}(?=$|${ENDING_DELIMETERS})`;
-    };
   }
+
+  const STARTING_DELIMITERS = String.raw`[.,\s/(\[{<:;'"!?|（『「。、／\u3000]`;
+  const ENDING_DELIMITERS = String.raw`[.,\s/)\]}>:;'"!?|）』」。、／\u3000]`;
+  return (word: string) => {
+    return String.raw`(?<=^|${STARTING_DELIMITERS})${escapeRegExp(word)}(?=$|${ENDING_DELIMITERS})`;
+  };
 };
 
 const createHighlightPattern = (options: {
@@ -119,19 +119,19 @@ export const createHighlightWordChunk = (
         return restoredWordList[i];
       })
       .join("");
-  } else {
-    return wordList.map((w: string, i: number) => {
-      if (pattern.test(w)) {
-        return h(
-          options.highlightTag,
-          {
-            class: options.highlightClass,
-            style: options.highlightStyle,
-          },
-          restoredWordList[i],
-        );
-      }
-      return restoredWordList[i];
-    });
   }
+
+  return wordList.map((w: string, i: number) => {
+    if (pattern.test(w)) {
+      return h(
+        options.highlightTag,
+        {
+          class: options.highlightClass,
+          style: options.highlightStyle,
+        },
+        restoredWordList[i],
+      );
+    }
+    return restoredWordList[i];
+  });
 };
