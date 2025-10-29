@@ -13,7 +13,7 @@
   },
   "author": "kawamataryo <ryo.kawamata0425@gmail.com>",
   "scripts": {
-    "build": "rollup --config rollup.config.ts --configPlugin typescript --resolveJsonModule",
+    "build": "rollup --config rollup.config.ts --configPlugin typescript",
     "release": "yarn build && semantic-release"
   },
   "dependencies": {

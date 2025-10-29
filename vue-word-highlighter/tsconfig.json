@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    "../example/**",
+    "../tests-vue2/**",
+    "../tests-vue3/**",
+    "dist/**"
+  ]
+}
+
+
