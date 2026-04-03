@@ -41,7 +41,7 @@
     "husky": "8.0.3",
     "lint-staged": "16.4.0",
     "semantic-release": "25.0.3",
-    "vue": "3.5.31",
+    "vue": "3.5.32",
     "vue2": "npm:vue@2.7.16"
   },
   "lint-staged": {
