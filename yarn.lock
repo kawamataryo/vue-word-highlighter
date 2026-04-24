@@ -1797,13 +1797,13 @@
     lodash "^4.17.15"
     pretty "^2.0.0"
 
-"@vue/test-utils@2.4.6":
-  version "2.4.6"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.4.6.tgz#7d534e70c4319d2a587d6a3b45a39e9695ade03c"
-  integrity sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==
+"@vue/test-utils@2.4.8":
+  version "2.4.8"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.4.8.tgz#f832a7b3245c7d7477079698a4633d0448fb6d34"
+  integrity sha512-cjAKFbSXFhtZ9Cj+ug60b21lW/BN737e+Syu2LPACIW6R0zVtj65Fnfe649KjfHor3Etx3ZavDFFBrZ+p21YNw==
   dependencies:
     js-beautify "^1.14.9"
-    vue-component-type-helpers "^2.0.0"
+    vue-component-type-helpers "^3.0.0"
 
 abbrev@1:
   version "1.1.1"
@@ -5964,10 +5964,10 @@ vitest@4.1.5:
     vite "^6.0.0 || ^7.0.0 || ^8.0.0"
     why-is-node-running "^2.3.0"
 
-vue-component-type-helpers@^2.0.0:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/vue-component-type-helpers/-/vue-component-type-helpers-2.0.6.tgz#41737970f70841bc1b82391afa364da0f4ee2d76"
-  integrity sha512-qdGXCtoBrwqk1BT6r2+1Wcvl583ZVkuSZ3or7Y1O2w5AvWtlvvxwjGhmz5DdPJS9xqRdDlgTJ/38ehWnEi0tFA==
+vue-component-type-helpers@^3.0.0:
+  version "3.2.7"
+  resolved "https://registry.yarnpkg.com/vue-component-type-helpers/-/vue-component-type-helpers-3.2.7.tgz#a85fd5ee4f5105883c267859c2d54a2d53e5da20"
+  integrity sha512-+gPp5YGmhfsj1IN+xUo7y0fb4clfnOiiUA39y07yW1VzCRjzVgwLbtmdWlghh7mXrPsEaYc7rrIir/HT6C8vYQ==
 
 vue-demi@0.14.10:
   version "0.14.10"
