@@ -1804,10 +1804,10 @@
     lodash "^4.17.15"
     pretty "^2.0.0"
 
-"@vue/test-utils@2.4.8":
-  version "2.4.8"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.4.8.tgz#f832a7b3245c7d7477079698a4633d0448fb6d34"
-  integrity sha512-cjAKFbSXFhtZ9Cj+ug60b21lW/BN737e+Syu2LPACIW6R0zVtj65Fnfe649KjfHor3Etx3ZavDFFBrZ+p21YNw==
+"@vue/test-utils@2.4.9":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.4.9.tgz#18dc90e857f0772586dbba0923df1ef331f0b4f8"
+  integrity sha512-YwgowiO1mPleZqpgAGfxvWu/A5A8nkLrbyH2SqiQRkyzCIaDzzo27/2uS/F1g7fRLvl8BUY0+Sr1eC+6+IHfrw==
   dependencies:
     js-beautify "^1.14.9"
     vue-component-type-helpers "^3.0.0"
