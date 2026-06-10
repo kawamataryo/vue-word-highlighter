@@ -5063,10 +5063,10 @@ saxes@^6.0.0:
   dependencies:
     xmlchars "^2.2.0"
 
-semantic-release@25.0.3:
-  version "25.0.3"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-25.0.3.tgz#77c2a7bfdcc63125fa2dea062d2cee28662ce224"
-  integrity sha512-WRgl5GcypwramYX4HV+eQGzUbD7UUbljVmS+5G1uMwX/wLgYuJAxGeerXJDMO2xshng4+FXqCgyB5QfClV6WjA==
+semantic-release@25.0.5:
+  version "25.0.5"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-25.0.5.tgz#67be786556e40e8e81c591a12f38877f1eee6052"
+  integrity sha512-mn61SUJwtM8ThrWn2WmgLVpwVJeG/hPSupua1psdMoufmwRIPyvRLkRkL0JDXkP67OntlLWUYnBnfVc8EDO3/g==
   dependencies:
     "@semantic-release/commit-analyzer" "^13.0.1"
     "@semantic-release/error" "^4.0.0"
