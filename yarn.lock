@@ -214,16 +214,16 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@commitlint/cli@21.2.0":
-  version "21.2.0"
-  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-21.2.0.tgz#49ba69a3a9466e7d571012943914109ef7a52287"
-  integrity sha512-4GLVIhUaT3c3GBlQ0GB80/5H3xXdn/Tgw4lrsuoOQVDu2wl4Xw0GuzSar8xZKSMv4H3xaKaQXmvH91GmdyYBZA==
+"@commitlint/cli@21.2.1":
+  version "21.2.1"
+  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-21.2.1.tgz#a1b4fa3d4366ac5d09e591218cb633f7fc031704"
+  integrity sha512-blsZGe29hJ72VGEFVl72IVYX+1vsfINpjA9yWQA6i7OKD/McGEOXg08sKIRKjFk4JvzhV/9n0l3i6NooPLTNfg==
   dependencies:
     "@commitlint/config-conventional" "^21.2.0"
     "@commitlint/format" "^21.2.0"
     "@commitlint/lint" "^21.2.0"
     "@commitlint/load" "^21.2.0"
-    "@commitlint/read" "^21.2.0"
+    "@commitlint/read" "^21.2.1"
     "@commitlint/types" "^21.2.0"
     tinyexec "^1.0.0"
     yargs "^18.0.0"
@@ -312,14 +312,14 @@
     conventional-changelog-angular "^9.0.0"
     conventional-commits-parser "^7.0.0"
 
-"@commitlint/read@^21.2.0":
-  version "21.2.0"
-  resolved "https://registry.yarnpkg.com/@commitlint/read/-/read-21.2.0.tgz#2f2674ff670cf47aeed3f638b725b8145e36404f"
-  integrity sha512-ELx8Ovh/JoAw5lpvDgxc6Y0We9skf2IPI2RFN+gnYgDGjRdMSF8zeodxhZmcclLWzfUIF7hXLOa8gOlllYcvBA==
+"@commitlint/read@^21.2.1":
+  version "21.2.1"
+  resolved "https://registry.yarnpkg.com/@commitlint/read/-/read-21.2.1.tgz#a39f19f73b45a604619831fdcbf93fa022feb870"
+  integrity sha512-hUW7EJQnNTL0vPOmVMNK4CrnrNBN0nN+JJHReFkdHO5y4iyHeEmTBwuC15OCqUTjxWo7idnH1LftfpWVIaPWIA==
   dependencies:
     "@commitlint/top-level" "^21.2.0"
     "@commitlint/types" "^21.2.0"
-    git-raw-commits "^5.0.0"
+    "@conventional-changelog/git-client" "^3.0.0"
     tinyexec "^1.0.0"
 
 "@commitlint/resolve-extends@^21.2.0":
@@ -363,13 +363,13 @@
     conventional-commits-parser "^7.0.0"
     picocolors "^1.1.1"
 
-"@conventional-changelog/git-client@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@conventional-changelog/git-client/-/git-client-2.6.0.tgz#1c7a13681426a7bc4298d24c92cda3a6d6fba544"
-  integrity sha512-T+uPDciKf0/ioNNDpMGc8FDsehJClZP0yR3Q5MN6wE/Y/1QZ7F+80OgznnTCOlMEG4AV0LvH2UJi3C/nBnaBUg==
+"@conventional-changelog/git-client@^3.0.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@conventional-changelog/git-client/-/git-client-3.1.0.tgz#0d89e1d74ecc578ebe1bf46c09488beef41c58e8"
+  integrity sha512-Tqa/gHco2WJWa740NRjOrfKVvzIqxkZpecb8bemaQ8sKM5PXb1UK4uTyTb/1wIqNuOVaDOFxyBdhTIQZn6gdjQ==
   dependencies:
-    "@simple-libs/child-process-utils" "^1.0.0"
-    "@simple-libs/stream-utils" "^1.2.0"
+    "@simple-libs/child-process-utils" "^2.0.0"
+    "@simple-libs/stream-utils" "^2.0.0"
     semver "^7.5.2"
 
 "@conventional-changelog/template@^1.2.0":
@@ -1434,17 +1434,12 @@
     "@sigstore/core" "^3.0.0"
     "@sigstore/protobuf-specs" "^0.5.0"
 
-"@simple-libs/child-process-utils@^1.0.0":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@simple-libs/child-process-utils/-/child-process-utils-1.0.2.tgz#cb182d310c9bed3ace200b26258e090d898a1736"
-  integrity sha512-/4R8QKnd/8agJynkNdJmNw2MBxuFTRcNFnE5Sg/G+jkSsV8/UBgULMzhizWWW42p8L5H7flImV2ATi79Ove2Tw==
+"@simple-libs/child-process-utils@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@simple-libs/child-process-utils/-/child-process-utils-2.0.0.tgz#90ea8a9008ab622cc50cf94ed3469ce5144e9eb6"
+  integrity sha512-dvNoRKLijXnD0XoJAz94pbNuB5GQgDr55UhpSPhffDkTT0Cmcqh9jSCOtwfT2d4H6MI9E7c4SgtMuJXZ6F3c6A==
   dependencies:
-    "@simple-libs/stream-utils" "^1.2.0"
-
-"@simple-libs/stream-utils@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@simple-libs/stream-utils/-/stream-utils-1.2.0.tgz#5af724b826f1ab4d7f2826d31d3efccec124102b"
-  integrity sha512-KxXvfapcixpz6rVEB6HPjOUZT22yN6v0vI0urQSk1L8MlEWPDFCZkhw2xmkyoTGYeFw7tWTZd7e3lVzRZRN/EA==
+    "@simple-libs/stream-utils" "^2.0.0"
 
 "@simple-libs/stream-utils@^2.0.0":
   version "2.0.0"
@@ -2926,14 +2921,6 @@ git-log-parser@^1.2.0:
     stream-combiner2 "~1.1.1"
     through2 "~2.0.0"
     traverse "~0.6.6"
-
-git-raw-commits@^5.0.0:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/git-raw-commits/-/git-raw-commits-5.0.1.tgz#e91d8fd4e3a264142166956fe1a23d08c069657e"
-  integrity sha512-Y+csSm2GD/PCSh6Isd/WiMjNAydu0VBiG9J7EdQsNA5P9uXvLayqjmTsNlK5Gs9IhblFZqOU0yid5Il5JPoLiQ==
-  dependencies:
-    "@conventional-changelog/git-client" "^2.6.0"
-    meow "^13.0.0"
 
 glob@^10.2.2:
   version "10.4.5"
