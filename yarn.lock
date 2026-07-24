@@ -5069,10 +5069,10 @@ safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   resolved "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass@1.101.6:
-  version "1.101.6"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.101.6.tgz#195cfd59f40125c3a479711efa5c0c2e4f8fa410"
-  integrity sha512-j8qYug9WuX19eU5sxJWQlbR8RYhKgXiOYgGjkJRkcW35c3neWtxPdcUW0saN6Od2L0aqEp0AmH9R/QeAxrffMQ==
+sass@1.101.7:
+  version "1.101.7"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.101.7.tgz#0e5ec0c5dca414d1d3b92cc1fe415d0c6108dce3"
+  integrity sha512-cDeUYU0dhwKVbpYg/ppsjyuoddxYhWlJOkRoI7+/iZsaSp7iowWDfm+tL2HcUafedWBDvbf/+hx0QRgKG4JSHA==
   dependencies:
     chokidar "^5.0.0"
     immutable "^5.1.5"
