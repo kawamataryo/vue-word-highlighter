@@ -39,7 +39,7 @@
     "@typescript-eslint/parser": "8.69.0",
     "@vue/composition-api": "1.7.2",
     "husky": "8.0.3",
-    "lint-staged": "17.4.1",
+    "lint-staged": "17.5.0",
     "semantic-release": "25.0.9",
     "vue": "3.5.42",
     "vue2": "npm:vue@2.7.16"
