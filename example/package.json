@@ -15,7 +15,7 @@
     "@vitejs/plugin-vue": "6.0.10",
     "@vue/compiler-sfc": "3.5.44",
     "bulma": "1.0.4",
-    "sass": "1.105.1",
+    "sass": "1.105.2",
     "typescript": "7.0.2",
     "vite": "8.3.4"
   }
