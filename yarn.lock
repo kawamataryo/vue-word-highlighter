@@ -1627,10 +1627,10 @@
     lodash "^4.17.15"
     pretty "^2.0.0"
 
-"@vue/test-utils@2.5.1":
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.5.1.tgz#4cd1c50d6be13e8723c95f8357697534153a726d"
-  integrity sha512-V/4a99odJ7hapr0bRt35XxljGk8hefq31gSOnlKTcEq2fUeoj2qb+FcpJYfQu4qfYhW9Ug+O2+CZ3QmZ7gXDzA==
+"@vue/test-utils@2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.6.0.tgz#6b3c520d6896d927539bc2372bf1883c92e32b08"
+  integrity sha512-kTB6s2p34cA/xXSpt17G0enU9A3F3pdm+o5GZgE3WGXXXpXJ5SVBsRhgCJNCc+ekGAzY0T7Hjyo5yEfwencBlg==
   dependencies:
     js-beautify "^2.0.0"
     vue-component-type-helpers "^3.0.0"
